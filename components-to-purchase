@@ -1,0 +1,58 @@
+NTD3055L104 or TN2106N3 for the windspeed amplifier. Try several perhaps.
+
+
+Part        Quantity    Descritption        Digikey link
+
+<either-or>
+--          ~3 stacked? Header connector || https://www.digikey.fi/product-detail/en/sullins-connector-solutions/SFH11-PBPC-D10-ST-BK/S9197-ND/1990090
+--          1 (..2)     Header connector |_ https://www.digikey.fi/product-detail/en/sullins-connector-solutions/PPPC102LJBN-RC/S5563-ND/776021
+</either-or>
+CD40109BE   2 (..3) ?   Logic shifter       https://www.digikey.fi/product-detail/en/texas-instruments/CD40109BE/296-3505-5-ND/376604
+NTD3055L104 1 (..2) *2  Strong N-ch MOSFET  https://www.digikey.fi/product-detail/en/on-semiconductor/NTD3055L104-1G/NTD3055L104-1GOS-ND/1484764
+TN2106N3    3-ish *1 *2 Jellybean N-MOSFET  https://www.digikey.fi/product-detail/en/microchip-technology/TN2106N3-G/TN2106N3-G-ND/4902377
+TP2104N3    3-ish ? *1  Jellybean P-MOSFET  https://www.digikey.fi/product-detail/en/microchip-technology/TP2104N3-G/TP2104N3-G-ND/4902384
+2N3904, *   5-ish ? *1  Jellybean NPN       https://www.digikey.fi/product-detail/en/micro-commercial-co/2N3904-AP/2N3904-APCT-ND/950591
+2N3906, *   5-ish ? *1  Jellybean PNP       https://www.digikey.fi/product-detail/en/micro-commercial-co/2N3906-AP/2N3906-APCT-ND/950592
+CD4052B     1 (..2) *3  Analog multiplexer  https://www.digikey.fi/product-detail/en/texas-instruments/CD4052BE/296-2058-5-ND/67307
+*           5-ish *2    ~10^4 ohm trimpot   https://www.digikey.fi/product-detail/en/bourns-inc/3319P-1-103/3319P-103-ND/612868
+*           5-ish *2    ~10^5 ohm trimpot   https://www.digikey.fi/product-detail/en/bourns-inc/3319P-1-104/3319P-104-ND/612869
+*           3-ish *2    ~10^6 ohm trimpot   https://www.digikey.fi/product-detail/en/bourns-inc/3319P-1-105/3319P-1-105-ND/2536248
+*           5-ish       ~500 ohm resistor   https://www.digikey.fi/product-detail/en/stackpole-electronics-inc/CF14JT470R/CF14JT470RCT-ND/1830342
+?           1           NTC 10^4..5 ohm     https://www.digikey.fi/product-detail/en/cantherm/MF52A1473J3950/317-1364-ND/1556298
+7805        0? *3       +5V regulator       https://www.digikey.fi/product-detail/en/stmicroelectronics/L7805CV/497-1443-5-ND/585964
+7905        1? *3       -5V regulator       https://www.digikey.fi/product-detail/en/stmicroelectronics/L7905CV/497-1472-5-ND/585993
+*           1?          Heatsink            https://www.digikey.fi/product-detail/en/fairchild-on-semiconductor/1N4148/1N4148FS-ND/458603
+*           3-ish       Prototyping board   https://www.digikey.fi/product-detail/en/dfrobot/FIT0099/1738-1000-ND/6588422
+*           16 (+4)     Reed switch         https://www.digikey.fi/product-detail/en/littelfuse-inc/FLEX-14-20-25/HE557-ND/2218215
+*           16 (+4) ?   Pull-up resistor    https://www.digikey.fi/product-detail/en/stackpole-electronics-inc/CF14JT33K0/CF14JT33K0CT-ND/1830387
+1N4148      8           Audio clamp diode   https://www.digikey.fi/product-detail/en/fairchild-on-semiconductor/1N4148/1N4148FS-ND/458603
+
+*1:
+- Jellybean NPNs, PNPs and small MOSFETs are always good to have.
+  Might not be needed for this project.
+
+*2:
+- 3-terminal trimpots of various sizes are good to have and are needed for
+  the amplifier.
+
+- The N-channel power MOSFET is cheaper than the P-channel.  It could make a
+  great transistor for the amplifier.
+
+*3:
+CD4052B has a negative voltage supply rail.
+Use a -5V regulator to create the ground from
+
++in ----------+---------------Vcc
+              |
+              |
+        /--L7905CV--+---------GND
+        |           |
+        |           = bypass
+        |           |
+-in-----+-----------+---------Vee
+
+
+
+For future reference:
+Part        Quantity    Descritption        Digikey link
+<too-long>  0 *2        Strong P-ch MOSFET  https://www.digikey.fi/product-detail/en/infineon-technologies/IPP45P03P4L11AKSA1/IPP45P03P4L11AKSA1-ND/2338148
