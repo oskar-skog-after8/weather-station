@@ -30,6 +30,7 @@ Gedanken
 --          ~3 stacked?     Header connector || https://www.digikey.fi/product-detail/en/sullins-connector-solutions/SFH11-PBPC-D10-ST-BK/S9197-ND/1990090
 --          1 (..2)         Header connector |_ https://www.digikey.fi/product-detail/en/sullins-connector-solutions/PPPC102LJBN-RC/S5563-ND/776021
 </either-or>
+*           1               Thin  wire          https://www.digikey.fi/product-detail/en/adafruit-industries-llc/1446/1528-2005-ND/6827138
 LM324       1               Quad op-amp
 555         2               555
 *           a bunch         R & C
