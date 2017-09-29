@@ -1,40 +1,42 @@
-Part        Quantity        Descritption        Digikey link
-----        -------         ------------        ------------
+Part            Quantity        Descritption            Digikey link
+----            -------         ------------            ------------
 
 Need now
 ========
-*           20 + backups    Reed switch         https://www.digikey.fi/product-detail/en/littelfuse-inc/MDSR-7-10-25/HE666-ND/970117
+Reed switch     20 + backups                            https://www.digikey.fi/product-detail/en/littelfuse-inc/MDSR-7-10-25/HE666-ND/970117
 
 
 Need later
 ==========
 
+NTC             1                                       https://www.digikey.fi/product-detail/en/cantherm/MF52A2103J3470/317-1258-ND/1191033
+C               1               ~5 µF non-electrolytic  https://www.digikey.fi/product-detail/en/panasonic-electronic-components/ECW-FE2W475J/P19146-ND/5881171
+R               1 (2***)        2.2 kOhm                https://www.digikey.fi/product-detail/en/stackpole-electronics-inc/CF14JT2K20/CF14JT2K20CT-ND/1830358
+NPN BJT         0 (1***)        2N3904                  https://www.digikey.fi/product-detail/en/micro-commercial-co/2N3904-AP/2N3904-APCT-ND/950591
 <either-or>
-NTC         1               wires               https://www.digikey.fi/product-detail/en/murata-electronics-north-america/NXFT15XH103FA2B060/490-16927-ND/7595835
-NTC         1               through hole        https://www.digikey.fi/product-detail/en/cantherm/MF52A2103J3470/317-1258-ND/1191033
+555             1 ***           Military grade          https://www.digikey.fi/product-detail/en/texas-instruments/SE555P/296-9684-5-ND/380221
+555             1               CMOS                    https://www.digikey.fi/product-detail/en/texas-instruments/TLC555CP/296-1857-5-ND/277502
 </either-or>
-*           3-ish           Prototyping board   https://www.digikey.fi/product-detail/en/dfrobot/FIT0099/1738-1000-ND/6588422
+Board           1               (Prototyping)           https://www.digikey.fi/product-detail/en/dfrobot/FIT0099/1738-1000-ND/6588422
+Connector       1               2x20 .1" pitch          https://www.digikey.fi/product-detail/en/amphenol-fci/67996-420HLF/609-3221-ND/1878553
 
 
 Good to have
 ============
-TN2106N3    3-ish *1 *2     Jellybean N-MOSFET  https://www.digikey.fi/product-detail/en/microchip-technology/TN2106N3-G/TN2106N3-G-ND/4902377
-TP2104N3    3-ish ? *1      Jellybean P-MOSFET  https://www.digikey.fi/product-detail/en/microchip-technology/TP2104N3-G/TP2104N3-G-ND/4902384
-2N3904, *   5-ish ? *1      Jellybean NPN       https://www.digikey.fi/product-detail/en/micro-commercial-co/2N3904-AP/2N3904-APCT-ND/950591
-2N3906, *   5-ish ? *1      Jellybean PNP       https://www.digikey.fi/product-detail/en/micro-commercial-co/2N3906-AP/2N3906-APCT-ND/950592
-R           5-ish *2        ~10^4 ohm trimpot   https://www.digikey.fi/product-detail/en/bourns-inc/3319P-1-103/3319P-103-ND/612868
-R           5-ish *2        ~10^5 ohm trimpot   https://www.digikey.fi/product-detail/en/bourns-inc/3319P-1-104/3319P-104-ND/612869
-R           3-ish *2        ~10^6 ohm trimpot   https://www.digikey.fi/product-detail/en/bourns-inc/3319P-1-105/3319P-1-105-ND/2536248
-R           5-ish           ~500 ohm resistor   https://www.digikey.fi/product-detail/en/stackpole-electronics-inc/CF14JT470R/CF14JT470RCT-ND/1830342
+TN2106N3        3-ish *1 *2     Jellybean N-MOSFET      https://www.digikey.fi/product-detail/en/microchip-technology/TN2106N3-G/TN2106N3-G-ND/4902377
+TP2104N3        3-ish ? *1      Jellybean P-MOSFET      https://www.digikey.fi/product-detail/en/microchip-technology/TP2104N3-G/TP2104N3-G-ND/4902384
+2N3904, *       5-ish ? *1      Jellybean NPN           https://www.digikey.fi/product-detail/en/micro-commercial-co/2N3904-AP/2N3904-APCT-ND/950591
+2N3906, *       5-ish ? *1      Jellybean PNP           https://www.digikey.fi/product-detail/en/micro-commercial-co/2N3906-AP/2N3906-APCT-ND/950592
+R               5-ish *2        ~10^4 ohm trimpot       https://www.digikey.fi/product-detail/en/bourns-inc/3319P-1-103/3319P-103-ND/612868
+R               5-ish *2        ~10^5 ohm trimpot       https://www.digikey.fi/product-detail/en/bourns-inc/3319P-1-104/3319P-104-ND/612869
+R               3-ish *2        ~10^6 ohm trimpot       https://www.digikey.fi/product-detail/en/bourns-inc/3319P-1-105/3319P-1-105-ND/2536248
+R               5-ish           ~500 ohm resistor       https://www.digikey.fi/product-detail/en/stackpole-electronics-inc/CF14JT470R/CF14JT470RCT-ND/1830342
 
 
 Gedanken
 ========
-*           1               Thin  wire          https://www.digikey.fi/product-detail/en/adafruit-industries-llc/1446/1528-2005-ND/6827138
-LM324       1               Quad op-amp
-555         2               555
-R, C           a bunch         R & C
+*               1               Thin  wire              https://www.digikey.fi/product-detail/en/adafruit-industries-llc/1446/1528-2005-ND/6827138
 <either-or>
---          ~3 stacked?     Surface connector   https://www.digikey.fi/product-detail/en/sullins-connector-solutions/SFH11-PBPC-D10-ST-BK/S9197-ND/1990090
---          1 (..2)         Header connector    https://www.digikey.fi/product-detail/en/sullins-connector-solutions/PPPC102LJBN-RC/S5563-ND/776021
+--              ~3 stacked?     Surface connector       https://www.digikey.fi/product-detail/en/sullins-connector-solutions/SFH11-PBPC-D10-ST-BK/S9197-ND/1990090
+--              1 (..2)         Header connector        https://www.digikey.fi/product-detail/en/sullins-connector-solutions/PPPC102LJBN-RC/S5563-ND/776021
 </either-or>
