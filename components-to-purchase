@@ -4,19 +4,10 @@ Part            Quantity        Descritption            Digikey link
 Need now
 ========
 Reed switch     20 + backups                            https://www.digikey.fi/product-detail/en/littelfuse-inc/MDSR-7-10-25/HE666-ND/970117
-
-
-Need later
-==========
-
 NTC             1                                       https://www.digikey.fi/product-detail/en/cantherm/MF52A2103J3470/317-1258-ND/1191033
 C               1               ~5 µF non-electrolytic  https://www.digikey.fi/product-detail/en/panasonic-electronic-components/ECW-FE2W475J/P19146-ND/5881171
-R               1 (3***)        2.2 kOhm                https://www.digikey.fi/product-detail/en/stackpole-electronics-inc/CF14JT2K20/CF14JT2K20CT-ND/1830358
-NPN BJT         0 (1***)        2N3904                  https://www.digikey.fi/product-detail/en/micro-commercial-co/2N3904-AP/2N3904-APCT-ND/950591
-<either-or>
-555             1 ***           Military grade          https://www.digikey.fi/product-detail/en/texas-instruments/SE555P/296-9684-5-ND/380221
+R               1               2.2 kOhm                https://www.digikey.fi/product-detail/en/stackpole-electronics-inc/CF14JT2K20/CF14JT2K20CT-ND/1830358
 555             1               CMOS                    https://www.digikey.fi/product-detail/en/texas-instruments/TLC555CP/296-1857-5-ND/277502
-</either-or>
 Board           1               (Prototyping)           https://www.digikey.fi/product-detail/en/dfrobot/FIT0099/1738-1000-ND/6588422
 Connector       1               2x20 .1" pitch          https://www.digikey.fi/product-detail/en/amphenol-fci/67996-420HLF/609-3221-ND/1878553
 
