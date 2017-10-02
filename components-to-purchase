@@ -1,5 +1,5 @@
-Part            Quantity        Descritption            Digikey link
-----            -------         ------------            ------------
+Part            Quantity        Description             Digikey link
+----            -------         -----------             ------------
 
 Need now
 ========
@@ -8,8 +8,8 @@ NTC             1                                       https://www.digikey.fi/p
 C               1               ~5 µF non-electrolytic  https://www.digikey.fi/product-detail/en/panasonic-electronic-components/ECW-FE2W475J/P19146-ND/5881171
 R               1               2.2 kOhm                https://www.digikey.fi/product-detail/en/stackpole-electronics-inc/CF14JT2K20/CF14JT2K20CT-ND/1830358
 555             1               CMOS                    https://www.digikey.fi/product-detail/en/texas-instruments/TLC555CP/296-1857-5-ND/277502
-Board           1               (Prototyping)           https://www.digikey.fi/product-detail/en/dfrobot/FIT0099/1738-1000-ND/6588422
-Connector       1               2x20 .1" pitch          https://www.digikey.fi/product-detail/en/amphenol-fci/67996-420HLF/609-3221-ND/1878553
+Board           2-ish, min: 1   (Prototyping)           https://www.digikey.fi/product-detail/en/dfrobot/FIT0099/1738-1000-ND/6588422
+Connector       3-ish. min: 1   2x20 .1" pitch          https://www.digikey.fi/product-detail/en/amphenol-fci/67996-420HLF/609-3221-ND/1878553
 
 
 Good to have
