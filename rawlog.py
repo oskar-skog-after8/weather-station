@@ -46,9 +46,20 @@ def main(routines, samplerate, log_interval, logdir):
                 for routine in routines:
                     routine.collect()
                 time.sleep(t + 1./samplerate - time.time())
+            # Log data
+            month = time.strftime('%Y-%m', time.gmtime())
+            date = time.strftime('%d', time.gmtime())
+            try:
+                os.mkdir(os.path.join(logdir, month))
+            except OSError:
+                pass
+            logfile = open(os.path.join(logdir, month, date), 'a')
             for routine in routines:
-                # TODO
-                print(routine.log(logdir))
+                logfile.write('{} {}\n'.format(
+                    time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime()),
+                    routine.log(logdir)
+                ))
+            logfile.close()
     except SystemExit:
         pass
     except KeyboardInterrupt:
@@ -64,8 +75,8 @@ class windspeed():
         self.MAGNETS = 3
         self.SWITCHES = [11, 7, 5, 3]
         
-        self.samplerate = samplerate
-        self.log_interval = log_interval
+        self.scale = 2 * samplerate * log_interval * self.MAGNETS \
+            * len(self.SWITCHES)
         
         self.switch_status = [0 for _ in self.SWITCHES]
         self.count = 0
@@ -79,15 +90,74 @@ class windspeed():
                 self.switch_status[index] ^= 1
     
     def log(self):
-        value = float(self.count) / (self.MAGNETS*len(self.SWITCHES)) / 2.0
-        value /= (self.samplerate * self.log_interval)
+        value = float(self.count) / self.scale
         self.count = 0
-        return '{} Hz'.format(value)
+        return 'Windspeed {} Hz'.format(value)
     
     def restore_GPIO(self):
         pass
 
+class winddirection():
+    def __init__(self, samplerate, log_interval):
+            # Pin, additive value
+        self.PROBE = [
+            (18, 0),
+            (22, 1),
+            (24, 2),
+            (16, 3),
+        ]
+        self.SCAN = [
+            (8, 0),
+            (10, 4),
+            (12, 8),
+            (26, 12),
+        ]
+        for pin in self.scan:
+            GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        for pin in self.probe:
+            GPIO.setup(pin, GPIO.out)
+            GPIO.output(pin, 1)
+        self.count = 0
+        self.sum = 0
+    
+    def collect(self):
+        for probe_pin, probe_value in self.PROBE:
+            GPIO.output(probe_pin, 0)
+            for scan_pin, scan_value in self.SCAN:
+                if not GPIO.input(scan_pin):
+                    self.count += 1
+                    self.sum += scan_value + probe_value
+            GPIO.output(probe_pin, 1)
+    
+    def log(self):
+        if not self.count:
+            return ''
+        average = float(self.sum) / self.count
+        self.sum = 0
+        self.count = 0
+        return 'Wind-direction {} Degrees'.format(22.5 * average)
+    
+    def restore_GPIO(self):
+        pass
 
+class temperature():
+    def __init__(self, samplerate, log_interval):
+        self.PIN = 21
+        
+        self.scale = 2 * samplerate * log_interval
+        GPIO.setup(self.PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        self.count = 0
+        self.switch_status = 0
+    
+    def collect(self):
+        if GPIO.input(self.PIN) != self.switch_status:
+            self.switch_status ^= 1
+            self.count += 1
+    
+    def log(self):
+        value = float(self.count) / self.scale
+        self.count = 0
+        return 'Temperature {} Hz'.format(value)
 
 if __name__ == '__main__':
     main([windspeed, winddirection, temperature], 100, 60, '.')
