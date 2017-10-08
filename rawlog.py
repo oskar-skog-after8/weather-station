@@ -12,10 +12,10 @@ except ImportError:
 
 
 class template():
-    def __init__(self, samplerate, log_interval):
+    def __init__(self):
         '''
         Set up the GPIO pins
-        Configure the `collect` method for the `samplerate` and `log_interval`
+        Each routine/class needs to keep track of time by itself.
         '''
         pass
     def collect(self):
@@ -36,7 +36,7 @@ class template():
 
 def main(routines, samplerate, log_interval, logdir):
     GPIO.setmode(GPIO.BOARD)
-    routines = [routine(samplerate) for routine in routines]
+    routines = [routine() for routine in routines]
     try:
         while True:
             i = 0
@@ -71,13 +71,11 @@ def main(routines, samplerate, log_interval, logdir):
 #################
 
 class windspeed():
-    def __init__(self, samplerate, log_interval):
+    def __init__(self):
         self.MAGNETS = 3
         self.SWITCHES = [11, 7, 5, 3]
         
-        self.scale = 2 * samplerate * log_interval * self.MAGNETS \
-            * len(self.SWITCHES)
-        
+        self.scale = 2 * self.MAGNETS * len(self.SWITCHES)
         self.switch_status = [0 for _ in self.SWITCHES]
         self.count = 0
         for pin in self.SWITCHES:
@@ -90,15 +88,16 @@ class windspeed():
                 self.switch_status[index] ^= 1
     
     def log(self):
-        value = float(self.count) / self.scale
+        value = float(self.count) / self.scale / (self.last_log - time.time())
         self.count = 0
+        self.last_log = time.time()
         return 'Windspeed {} Hz'.format(value)
     
     def restore_GPIO(self):
         pass
 
 class winddirection():
-    def __init__(self, samplerate, log_interval):
+    def __init__(self, log_interval):
             # Pin, additive value
         self.PROBE = [
             (18, 0),
@@ -141,13 +140,13 @@ class winddirection():
         pass
 
 class temperature():
-    def __init__(self, samplerate, log_interval):
+    def __init__(self):
         self.PIN = 21
         
-        self.scale = 2 * samplerate * log_interval
         GPIO.setup(self.PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         self.count = 0
         self.switch_status = 0
+        self.last_log = time.time()
     
     def collect(self):
         if GPIO.input(self.PIN) != self.switch_status:
@@ -155,7 +154,8 @@ class temperature():
             self.count += 1
     
     def log(self):
-        value = float(self.count) / self.scale
+        value = float(self.count) / 2 / (time.time() - self.last_log)
+        self.last_log = time.time()
         self.count = 0
         return 'Temperature {} Hz'.format(value)
 
