@@ -5,7 +5,7 @@ import sys
 import time
 
 try:
-    import GPIO from RPi
+    from RPi import GPIO
 except ImportError:
     sys.stderr.write('Failed to import RPi.GPIO\n')
     sys.exit(1)
@@ -40,12 +40,12 @@ def main(routines, samplerate, log_interval, logdir):
     try:
         while True:
             i = 0
-            while i < log_interval * samplerate
+            while i < log_interval * samplerate:
                 i += 1
                 t = time.time()
                 for routine in routines:
                     routine.collect()
-                time.sleep(t + 1./samplerate - time.time())
+                time.sleep(max(0, t + 1./samplerate - time.time()))
             # Log data
             month = time.strftime('%Y-%m', time.gmtime())
             date = time.strftime('%d', time.gmtime())
@@ -57,7 +57,7 @@ def main(routines, samplerate, log_interval, logdir):
             for routine in routines:
                 logfile.write('{} {}\n'.format(
                     time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime()),
-                    routine.log(logdir)
+                    routine.log()
                 ))
             logfile.close()
     except SystemExit:
@@ -80,6 +80,7 @@ class windspeed():
         self.count = 0
         for pin in self.SWITCHES:
             GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        self.last_log = time.time()
     
     def collect(self):
         for index, pin in enumerate(self.SWITCHES):
@@ -97,7 +98,7 @@ class windspeed():
         pass
 
 class winddirection():
-    def __init__(self, log_interval):
+    def __init__(self):
             # Pin, additive value
         self.PROBE = [
             (18, 0),
@@ -111,10 +112,10 @@ class winddirection():
             (12, 8),
             (26, 12),
         ]
-        for pin in self.scan:
+        for pin, _ in self.SCAN:
             GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-        for pin in self.probe:
-            GPIO.setup(pin, GPIO.out)
+        for pin, _ in self.PROBE:
+            GPIO.setup(pin, GPIO.OUT)
             GPIO.output(pin, 1)
         self.count = 0
         self.sum = 0
@@ -160,4 +161,4 @@ class temperature():
         return 'Temperature {} Hz'.format(value)
 
 if __name__ == '__main__':
-    main([windspeed, winddirection, temperature], 100, 60, '.')
+    main([windspeed, winddirection, temperature], 100, 60, 'log')
