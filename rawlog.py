@@ -89,7 +89,7 @@ class windspeed():
                 self.switch_status[index] ^= 1
     
     def log(self):
-        value = float(self.count) / self.scale / (self.last_log - time.time())
+        value = float(self.count) / self.scale / (time.time() - self.last_log)
         self.count = 0
         self.last_log = time.time()
         return 'Windspeed {} Hz'.format(value)
