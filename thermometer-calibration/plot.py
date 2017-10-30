@@ -5,7 +5,7 @@ from matplotlib.figure import Figure
 import numpy
 import math
 
-def beta(cold=-50., hot=100., frequency_step=.1):
+def beta(cold=-50., hot=100., frequency_step=.05):
     a = 3470.
     b = 1100.
     c = 139.574
@@ -41,7 +41,7 @@ def main():
     for f, T, key in data:
         ax.plot(float(f), float(T), marker='.', color=colors[key])
     ax.plot(*beta())
-    fig.set_dpi(180)
+    fig.set_dpi(270)
     canvas.print_png('plot.png')
 
 if __name__ == '__main__':
