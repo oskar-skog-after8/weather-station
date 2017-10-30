@@ -5,6 +5,28 @@ from matplotlib.figure import Figure
 import numpy
 import math
 
+def beta(cold=-50., hot=100., frequency_step=.1):
+    a = 3470.
+    b = 1100.
+    c = 139.574
+    d = 2.4281
+    
+    f_list = []
+    T_list = []
+    f = 0.0
+    while True:
+        f += frequency_step
+        T = a/(math.log(-b*(f-c)/f) + d) - 273.15
+        if T < cold:
+            continue
+        if T > hot:
+            break
+        f_list.append(f)
+        T_list.append(T)
+    
+    return f_list, T_list
+    
+
 def main():
     fig = Figure()
     canvas = FigureCanvas(fig)
@@ -18,6 +40,7 @@ def main():
     }
     for f, T, key in data:
         ax.plot(float(f), float(T), marker='.', color=colors[key])
+    ax.plot(*beta())
     fig.set_dpi(180)
     canvas.print_png('plot.png')
 
