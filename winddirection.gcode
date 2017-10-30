@@ -80005,7 +80005,7 @@ G4 S0
 ;M140 S40
 
 ; Overnight optimized:
-G10 P0 S195 R195                       ; Set tool 0 operating and standby temperatures
+G10 P0 S-273 R-273                       ; Set tool 0 operating and standby temperatures
 M140 S0
 
 ; filament used = 27432.6mm (66.0cm3)
