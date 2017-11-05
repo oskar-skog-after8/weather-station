@@ -1,3 +1,7 @@
+Notice:  The pinout is for looking down on the pin headers.
+You need to mirror the pinout to match the cable.
+
+
 Raspberry Pi to board
 =====================
 
@@ -23,8 +27,6 @@ NC          GPIO10  RPi 19  33 ■ ■ 34   RPi 20  GND     NC
 TEMP        GPIO    RPi 21  35 ■ ■ 36   RPi 22  GPIO    PROBE_X1
 NC          GPIO11  RPi 23  37 ■ ■ 38   RPi 24  GPIO    PROBE_X2
 GND (555)   GND     RPi 25  39 ■ ■ 40   RPi 26  GPIO    SCAN_3X
-
-
 
 
 
