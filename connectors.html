@@ -5,6 +5,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>Connector pinouts</title>
         <style type="text/css">
+            img
+            {
+                max-width: 100%;
+                height: auto;
+            }
+            code
+            {
+                white-space: pre;
+            }
+            div, table
+            {
+                page-break-inside: avoid;
+            }
+            
+            th
+            {
+                border-bottom: 1px solid;
+            }
             td, th
             {
                 padding-right: 1em;
@@ -14,9 +32,14 @@
                 padding-left: 1em;
                 border-left: 1px solid;
             }
-            code
+            caption
             {
-                white-space: pre;
+                font-size: 150%;
+            }
+            
+            #board2switches img
+            {
+                float: left;
             }
         </style>
     </head>
@@ -52,33 +75,64 @@
         </div>
         <div id="board2switches">
             <h2>Board to switches</h2>
+            <img src="board2switches-cable.png" alt="" width="240" height="960"/>
+            <p>
+                It's a single plug with a split cable.
+                The blue lines represent the ribbon cables coming from the
+                connector. The rewiring is done in the plug to simplify wiring
+                the ribbon cables to the reed switches.
+            </p>
             <table>
-<tr><th>Function</th><th>PATA pin</th>              <th>Function</th></tr>
-<tr><td>VA  </td>    <td><code> 1 ■ ■  2</code></td><td>VCOM (GND) <strong>*</strong></td></tr>
-<tr><td>VB  </td>    <td><code> 3 ■ ■  4</code></td><td>VCOM (GND) <strong>*</strong></td></tr>
-<tr><td>VC  </td>    <td><code> 5 ■ ■  6</code></td><td>VCOM (GND) <strong>*</strong></td></tr>
-<tr><td>VD  </td>    <td><code> 7 ■ ■  8</code></td><td>P05B <strong>*</strong></td></tr>
-<tr><td>P00A</td>    <td><code>_9 ■ ■ 10</code></td><td>P00B</td></tr>
-<tr><td>P01A</td>    <td><code>11 ■ ■ 12</code></td><td>P01B</td></tr>
-<tr><td>P02A</td>    <td><code>13 ■ ■ 14</code></td><td>P02B</td></tr>
-<tr><td>P03A</td>    <td><code>15 ■ ■ 16</code></td><td>P03B</td></tr>
-<tr><td>P04A</td>    <td><code>17 ■ ■ 18</code></td><td>P04B</td></tr>
-<tr><td>P05A</td>    <td><code>19 ■   20</code></td><td>KEY/No pin/P05B <strong>*</strong></td></tr>
-<tr><td>P06A</td>    <td><code>21 ■ ■ 22</code></td><td>P06B</td></tr>
-<tr><td>P07A</td>    <td><code>23 ■ ■ 24</code></td><td>P07B</td></tr>
-<tr><td>P08A</td>    <td><code>25 ■ ■ 26</code></td><td>P08B</td></tr>
-<tr><td>P09A</td>    <td><code>27 ■ ■ 28</code></td><td>P09B</td></tr>
-<tr><td>P10A</td>    <td><code>29 ■ ■ 30</code></td><td>P10B</td></tr>
-<tr><td>P11A</td>    <td><code>31 ■ ■ 32</code></td><td>P11B</td></tr>
-<tr><td>P12A</td>    <td><code>33 ■ ■ 34</code></td><td>P12B</td></tr>
-<tr><td>P13A</td>    <td><code>35 ■ ■ 36</code></td><td>P13B</td></tr>
-<tr><td>P14A</td>    <td><code>37 ■ ■ 38</code></td><td>P14B</td></tr>
-<tr><td>P15A</td>    <td><code>39 ■ ■ 40</code></td><td>P15B</td></tr>
+<tr><th>Wire</th><th>PATA pin</th>              <th>Wire</th></tr>
+<tr><td>VA  </td><td><code> 1 ■ ■  2</code></td><td>VCOM (GND) <strong>*</strong></td></tr>
+<tr><td>VB  </td><td><code> 3 ■ ■  4</code></td><td>VCOM (GND) <strong>*</strong></td></tr>
+<tr><td>VC  </td><td><code> 5 ■ ■  6</code></td><td>VCOM (GND) <strong>*</strong></td></tr>
+<tr><td>VD  </td><td><code> 7 ■ ■  8</code></td><td>P5B <strong>*</strong></td></tr>
+<tr><td>P0A</td> <td><code>_9 ■ ■ 10</code></td><td>P0B</td></tr>
+<tr><td>P1A</td> <td><code>11 ■ ■ 12</code></td><td>P1B</td></tr>
+<tr><td>P2A</td> <td><code>13 ■ ■ 14</code></td><td>P2B</td></tr>
+<tr><td>P3A</td> <td><code>15 ■ ■ 16</code></td><td>P3B</td></tr>
+<tr><td>P4A</td> <td><code>17 ■ ■ 18</code></td><td>P4B</td></tr>
+<tr><td>P5A</td> <td><code>19 ■   20</code></td><td>KEY/No pin/P5B <strong>*</strong></td></tr>
+<tr><td>P6A</td> <td><code>21 ■ ■ 22</code></td><td>P6B</td></tr>
+<tr><td>P7A</td> <td><code>23 ■ ■ 24</code></td><td>P7B</td></tr>
+<tr><td>P8A</td> <td><code>25 ■ ■ 26</code></td><td>P8B</td></tr>
+<tr><td>P9A</td> <td><code>27 ■ ■ 28</code></td><td>P9B</td></tr>
+<tr><td>P10A</td><td><code>29 ■ ■ 30</code></td><td>P10B</td></tr>
+<tr><td>P11A</td><td><code>31 ■ ■ 32</code></td><td>P11B</td></tr>
+<tr><td>P12A</td><td><code>33 ■ ■ 34</code></td><td>P12B</td></tr>
+<tr><td>P13A</td><td><code>35 ■ ■ 36</code></td><td>P13B</td></tr>
+<tr><td>P14A</td><td><code>37 ■ ■ 38</code></td><td>P14B</td></tr>
+<tr><td>P15A</td><td><code>39 ■ ■ 40</code></td><td>P15B</td></tr>
             </table>
             <p><strong>*</strong>
-                P05B is duplicated due to the key.
+                P5B is duplicated due to the key.
                 There are only three VCOM (common for VA, VB, VC, and VD).
             </p>
+            <table>
+                <caption>Switches</caption>
+                <tr><th>Wire A</th><th>Wire B</th><th>Function</th></tr>
+                <tr><td>VA</td>  <td>VCOM</td><td>Wind velocity</td></tr>
+                <tr><td>VB</td>  <td>VCOM</td><td>Wind velocity</td></tr>
+                <tr><td>VC</td>  <td>VCOM</td><td>Wind velocity</td></tr>
+                <tr><td>VD</td>  <td>VCOM</td><td>Wind velocity</td></tr>
+                <tr><td>P0A</td> <td>P0B</td><td>Wind direction 0°</td></tr>
+                <tr><td>P1A</td> <td>P1B</td><td>Wind direction 22.5°</td></tr>
+                <tr><td>P2A</td> <td>P2B</td><td>Wind direction 45°</td></tr>
+                <tr><td>P3A</td> <td>P3B</td><td>Wind direction 67.5°</td></tr>
+                <tr><td>P4A</td> <td>P4B</td><td>Wind direction 90°</td></tr>
+                <tr><td>P5A</td> <td>P5B</td><td>Wind direction 112.5°</td></tr>
+                <tr><td>P6A</td> <td>P6B</td><td>Wind direction 135°</td></tr>
+                <tr><td>P7A</td> <td>P8B</td><td>Wind direction 157.5°</td></tr>
+                <tr><td>P8A</td> <td>P8B</td><td>Wind direction 180°</td></tr>
+                <tr><td>P9A</td> <td>P9B</td><td>Wind direction 202.5°</td></tr>
+                <tr><td>P10A</td><td>P10B</td><td>Wind direction 225°</td></tr>
+                <tr><td>P11A</td><td>P11B</td><td>Wind direction 247.5°</td></tr>
+                <tr><td>P12A</td><td>P12B</td><td>Wind direction 270°</td></tr>
+                <tr><td>P13A</td><td>P13B</td><td>Wind direction 292.5°</td></tr>
+                <tr><td>P14A</td><td>P14B</td><td>Wind direction 315°</td></tr>
+                <tr><td>P15A</td><td>P15B</td><td>Wind direction 337.5°</td></tr>
+            </table>
         </div>
     </body>
 </html>
