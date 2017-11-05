@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html leng="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Connector pinouts</title>
+        <style type="text/css">
+            td, th
+            {
+                padding-right: 1em;
+            }
+            td + td, th + th
+            {
+                padding-left: 1em;
+                border-left: 1px solid;
+            }
+            code
+            {
+                white-space: pre;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Connector pinouts</h1>
+        <p>Notice:  The pinout is for looking down on the pin headers.
+        You need to mirror the pinout to match the cable.</p>
+        <div id="RPi2board">
+            <h2>Raspberry Pi to board</h2>
+            <table>
+<tr><th>Function</th>  <th>RPi pin</th><th>RPi pin</th><th>PATA pin</th>              <th>RPi pin</th><th>RPi pin</th><th>Function</th></tr>
+<tr><td>No pin</td>    <td>No pin</td> <td>No pin</td> <td><code> 1 ■ ■  2</code></td><td>No pin</td> <td>No pin</td> <td>No pin</td></tr>
+<tr><td>No pin</td>    <td>No pin</td> <td>No pin</td> <td><code> 3 ■ ■  4</code></td><td>No pin</td> <td>No pin</td> <td>No pin</td></tr>
+<tr><td>No pin</td>    <td>No pin</td> <td>No pin</td> <td><code> 5 ■ ■  6</code></td><td>No pin</td> <td>No pin</td> <td>No pin</td></tr>
+<tr><td>No pin</td>    <td>No pin</td> <td>No pin</td> <td><code> 7 ■ ■  8</code></td><td>No pin</td> <td>No pin</td> <td>No pin</td></tr>
+<tr><td>No pin</td>    <td>No pin</td> <td>No pin</td> <td><code> 9 ■ ■ 10</code></td><td>No pin</td> <td>No pin</td> <td>No pin</td></tr>
+<tr><td>No pin</td>    <td>No pin</td> <td>No pin</td> <td><code>11 ■ ■ 12</code></td><td>No pin</td> <td>No pin</td> <td>No pin</td></tr>
+<tr><td>No pin</td>    <td>No pin</td> <td>No pin</td> <td><code>13 ■ ■ 14</code></td><td>No pin</td> <td>No pin</td> <td>No pin</td></tr>
+<tr><td>NC</td>        <td>VDD</td>    <td>1</td>      <td><code>15 ■ ■ 16</code></td><td>2</td>      <td>5V</td>     <td>NC</td></tr>
+<tr><td>VD</td>        <td>GPIO 0</td> <td>3</td>      <td><code>17 ■ ■ 18</code></td><td>4</td>      <td>5V</td>     <td>NC</td></tr>
+<tr><td>VC</td>        <td>GPIO 1</td> <td>5</td>      <td><code>19 ■   20</code></td><td>6</td>      <td>GND</td>    <td>KEY/<strong>No pin</strong></td></tr>
+<tr><td>VB</td>        <td>GPIO 4</td> <td>7</td>      <td><code>21 ■ ■ 22</code></td><td>8</td>      <td>GPIO 14</td><td>SCAN_0X</td></tr>
+<tr><td>GND (VCOM)</td><td>GND</td>    <td>9</td>      <td><code>23 ■ ■ 24</code></td><td>10</td>     <td>GPIO 15</td><td>SCAN_1X</td></tr>
+<tr><td>VA</td>        <td>GPIO 17</td><td>11</td>     <td><code>25 ■ ■ 26</code></td><td>12</td>     <td>GPIO 18</td><td>SCAN_2X</td></tr>
+<tr><td>NC</td>        <td>GPIO 21</td><td>13</td>     <td><code>27 ■ ■ 28</code></td><td>14</td>     <td>GND</td>    <td>NC</td></tr>
+<tr><td>NC</td>        <td>GPIO 22</td><td>15</td>     <td><code>29 ■ ■ 30</code></td><td>16</td>     <td>GPIO 23</td><td>PROBE_X3</td></tr>
+<tr><td>VDD (TEMP)</td><td>VDD</td>    <td>17</td>     <td><code>31 ■ ■ 32</code></td><td>18</td>     <td>GPIO 24</td><td>PROBE_X0</td></tr>
+<tr><td>NC</td>        <td>GPIO 10</td><td>19</td>     <td><code>33 ■ ■ 34</code></td><td>20</td>     <td>GND</td>    <td>NC</td></tr>
+<tr><td>TEMP</td>      <td>GPIO 9</td> <td>21</td>     <td><code>35 ■ ■ 36</code></td><td>22</td>     <td>GPIO 25</td><td>PROBE_X1</td></tr>
+<tr><td>NC</td>        <td>GPIO 11</td><td>23</td>     <td><code>37 ■ ■ 38</code></td><td>24</td>     <td>GPIO 8</td> <td>PROBE_X2</td></tr>
+<tr><td>GND (TEMP)</td><td>GND</td>    <td>25</td>     <td><code>39 ■ ■ 40</code></td><td>26</td>     <td>GPIO 7</td> <td>SCAN_3X</td></tr>
+            </table>
+        </div>
+        <div id="board2switches">
+            <h2>Board to switches</h2>
+            <table>
+<tr><th>Function</th><th>PATA pin</th>              <th>Function</th></tr>
+<tr><td>VA  </td>    <td><code> 1 ■ ■  2</code></td><td>VCOM (GND) <strong>*</strong></td></tr>
+<tr><td>VB  </td>    <td><code> 3 ■ ■  4</code></td><td>VCOM (GND) <strong>*</strong></td></tr>
+<tr><td>VC  </td>    <td><code> 5 ■ ■  6</code></td><td>VCOM (GND) <strong>*</strong></td></tr>
+<tr><td>VD  </td>    <td><code> 7 ■ ■  8</code></td><td>P05B <strong>*</strong></td></tr>
+<tr><td>P00A</td>    <td><code>_9 ■ ■ 10</code></td><td>P00B</td></tr>
+<tr><td>P01A</td>    <td><code>11 ■ ■ 12</code></td><td>P01B</td></tr>
+<tr><td>P02A</td>    <td><code>13 ■ ■ 14</code></td><td>P02B</td></tr>
+<tr><td>P03A</td>    <td><code>15 ■ ■ 16</code></td><td>P03B</td></tr>
+<tr><td>P04A</td>    <td><code>17 ■ ■ 18</code></td><td>P04B</td></tr>
+<tr><td>P05A</td>    <td><code>19 ■   20</code></td><td>KEY/No pin/P05B <strong>*</strong></td></tr>
+<tr><td>P06A</td>    <td><code>21 ■ ■ 22</code></td><td>P06B</td></tr>
+<tr><td>P07A</td>    <td><code>23 ■ ■ 24</code></td><td>P07B</td></tr>
+<tr><td>P08A</td>    <td><code>25 ■ ■ 26</code></td><td>P08B</td></tr>
+<tr><td>P09A</td>    <td><code>27 ■ ■ 28</code></td><td>P09B</td></tr>
+<tr><td>P10A</td>    <td><code>29 ■ ■ 30</code></td><td>P10B</td></tr>
+<tr><td>P11A</td>    <td><code>31 ■ ■ 32</code></td><td>P11B</td></tr>
+<tr><td>P12A</td>    <td><code>33 ■ ■ 34</code></td><td>P12B</td></tr>
+<tr><td>P13A</td>    <td><code>35 ■ ■ 36</code></td><td>P13B</td></tr>
+<tr><td>P14A</td>    <td><code>37 ■ ■ 38</code></td><td>P14B</td></tr>
+<tr><td>P15A</td>    <td><code>39 ■ ■ 40</code></td><td>P15B</td></tr>
+            </table>
+            <p><strong>*</strong>
+                P05B is duplicated due to the key.
+                There are only three VCOM (common for VA, VB, VC, and VD).
+            </p>
+        </div>
+    </body>
+</html>
