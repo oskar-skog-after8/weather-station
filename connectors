@@ -5,28 +5,28 @@ You need to mirror the pinout to match the cable.
 Raspberry Pi to board
 =====================
 
-Function    RPi pin         PATA pin    RPi pin         Function
---------    -------         --------    -------         --------
-                            _1 ■ ■ _2   
-                            _3 ■ ■ _4   
-                            _5 ■ ■ _6   
-                            _7 ■ ■ _8   
-                            _9 ■ ■ 10   
-                            11 ■ ■ 12   
-                            13 ■ ■ 14   
-NC          VDD     RPi _1  15 ■ ■ 16   Rpi _2  5V      NC
-VD          GPIO    RPi _3  17 ■ ■ 18   Rpi _4  5V      NC
-VC          GPIO    RPi _5  19 ■   20   Rpi _6  GND     KEY/NC
-VB          GPIO    RPi _7  21 ■ ■ 22   RPi _8  GPIO    SCAN_0X
-GND (VCOM)  GND     RPi _9  23 ■ ■ 24   RPi 10  GPIO    SCAN_1X
-VA          GPIO    RPi 11  25 ■ ■ 26   RPi 12  GPIO    SCAN_2X
-NC          GPIO27  RPi 13  27 ■ ■ 28   RPi 14  GND     NC
-NC          GPIO22  RPi 15  29 ■ ■ 30   RPi 16  GPIO    PROBE_X3
-VDD         VDD     RPi 17  31 ■ ■ 32   RPi 18  GPIO    PROBE_X0
-NC          GPIO10  RPi 19  33 ■ ■ 34   RPi 20  GND     NC
-TEMP        GPIO    RPi 21  35 ■ ■ 36   RPi 22  GPIO    PROBE_X1
-NC          GPIO11  RPi 23  37 ■ ■ 38   RPi 24  GPIO    PROBE_X2
-GND (555)   GND     RPi 25  39 ■ ■ 40   RPi 26  GPIO    SCAN_3X
+Function    RPi pin     RPi pin PATA pin    RPi pin         Function
+--------    -------     ------- --------    -------         --------
+No pin      No pin              _1 ■ ■ _2   No pin          No pin
+No pin      No pin              _3 ■ ■ _4   No pin          No pin
+No pin      No pin              _5 ■ ■ _6   No pin          No pin
+No pin      No pin              _7 ■ ■ _8   No pin          No pin
+No pin      No pin              _9 ■ ■ 10   No pin          No pin
+No pin      No pin              11 ■ ■ 12   No pin          No pin
+No pin      No pin              13 ■ ■ 14   No pin          No pin
+NC          VDD         _1      15 ■ ■ 16   _2  5V          NC
+VD          GPIO  0     _3      17 ■ ■ 18   _4  5V          NC
+VC          GPIO  1     _5      19 ■   20   _6  GND         KEY/No pin
+VB          GPIO  4     _7      21 ■ ■ 22   _8  GPIO 14     SCAN_0X
+GND (VCOM)  GND         _9      23 ■ ■ 24   10  GPIO 15     SCAN_1X
+VA          GPIO 17     11      25 ■ ■ 26   12  GPIO 18     SCAN_2X
+NC          GPIO 21     13      27 ■ ■ 28   14  GND         NC
+NC          GPIO 22     15      29 ■ ■ 30   16  GPIO 23     PROBE_X3
+VDD         VDD         17      31 ■ ■ 32   18  GPIO 24     PROBE_X0
+NC          GPIO 10     19      33 ■ ■ 34   20  GND         NC
+TEMP        GPIO  9     21      35 ■ ■ 36   22  GPIO 25     PROBE_X1
+NC          GPIO 11     23      37 ■ ■ 38   24  GPIO  8     PROBE_X2
+GND (555)   GND         25      39 ■ ■ 40   26  GPIO  7     SCAN_3X
 
 
 
@@ -45,7 +45,7 @@ P01A        11 ■ ■ 12   P01B
 P02A        13 ■ ■ 14   P02B
 P03A        15 ■ ■ 16   P03B
 P04A        17 ■ ■ 18   P04B
-P05A        19 ■   20   KEY/P05B
+P05A        19 ■   20   KEY/P05B/No pin
 P06A        21 ■ ■ 22   P06B
 P07A        23 ■ ■ 24   P07B
 P08A        25 ■ ■ 26   P08B
