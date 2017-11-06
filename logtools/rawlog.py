@@ -131,7 +131,7 @@ class winddirection():
     
     def log(self):
         if not self.count:
-            return ''
+            return 'Wind-direction unknown'
         average = float(self.sum) / self.count
         self.sum = 0
         self.count = 0

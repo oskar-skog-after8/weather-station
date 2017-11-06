@@ -41,26 +41,23 @@ def parseline(line):
     }
     
     parts = filter(None, line.split(' '))
-    if len(parts) in (3, 5):
-        timestamp = '{} {}'.format(parts[0], parts[1])
-        parts = parts[2:]
-    if len(parts) == 3:
-        key, value, _ = parts
+    try:
+        timestamp1, timestamp2, key, value = parts[:4]
+    except:
+        return ''
+    timestamp = '{} {}'.format(timestamp1, timestamp2)
+    if value != 'unknown':
         function = mapping[key][0]
         calibration = eval(open('/usr/local/lib/weather/calibration').read())[key]
         try:
-            new_value = function(float(value), calibration)
+            new_value = '{} {}'.format(
+                function(float(value), calibration), mapping[key][1]
+            )
         except:
             new_value = '<error>'
-        new_unit = mapping[key][1]
-        return '{} {} {} {}'.format(timestamp, key, new_value, new_unit)
-    elif len(parts) == 1:
-        return '{} {} Unknown/error'.format(timestamp, key)
     else:
-        return '{} ERROR: {}'.format(
-            time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime()),
-            line
-        )
+        new_value = 'unknown'
+    return '{} {} {}'.format(timestamp, key, new_value)
 
 def main():
     logdir = '/var/log/weather'
