@@ -34,29 +34,56 @@ def parseline(line):
     
     <date> <time> <key> <value> <unit>
     '''
-    try:
-        timestamp1, timestamp2, key, value, _ = line.split(' ')
-    except ValueError:
-        return ''
     mapping = {
         'Windspeed': (windspeed, 'm/s'),
         'Wind-direction': (winddirection, '°'),
         'Temperature': (temperature, '°C'),
     }
-    function = mapping[key][0]
-    calibration = eval(open('/home/pi/elab/oskar/weatherstation/logtools/calibration').read())[key]
-    return '{} {} {} {} {}'.format(timestamp1, timestamp2, key,
-        function(float(value), calibration), mapping[key][1])
+    
+    parts = filter(None, line.split(' '))
+    if len(parts) in (3, 5):
+        timestamp = '{} {}'.format(parts[0], parts[1])
+        parts = parts[2:]
+    if len(parts) == 3:
+        key, value, _ = parts
+        function = mapping[key][0]
+        calibration = eval(open('/home/pi/elab/oskar/weatherstation/logtools/calibration').read())[key]
+        try:
+            new_value = function(float(value), calibration)
+        except:
+            new_value = '<error>'
+        new_unit = mapping[key][1]
+        return '{} {} {} {}'.format(timestamp, key, new_value, new_unit)
+    elif len(parts) == 1:
+        return '{} {} Unknown/error'.format(timestamp, key)
+    else:
+        return '{} ERROR: {}'.format(
+            time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime()),
+            line
+        )
 
 def main():
     logdir = '/home/pi/elab/oskar/weatherstation/log'
+    # Past
+    t = time.time()     # Avoid exceptionally rare race conditions.
+    for n in range(1, 7):
+        name = os.path.join( \
+            logdir, time.strftime('%Y-%m/%d', time.gmtime(t-n*86400)))
+        input = open(name)
+        output = open(name + '.calibrated', 'w')
+        for line in filter(None, input.read().split('\n')):
+            output.write(parseline(line) + '\n')
+        output.close()
+        input.close()
+    # Now
     while True:
-        t = time.time()     # Avoid exceptionally rare race conditions.
-        today = os.path.join(logdir,
-            time.strftime('%Y-%m/%d', time.gmtime(t)))
-        tomorrow = os.path.join(logdir,
-            time.strftime('%Y-%m/%d', time.gmtime(t+86400)))
-        output = open(os.path.join(today + '.calibrated'), 'a')
+        t = time.time()
+        today = os.path.join( \
+            logdir, time.strftime('%Y-%m/%d', time.gmtime(t)))
+        tomorrow = os.path.join( \
+            logdir, time.strftime('%Y-%m/%d', time.gmtime(t+86400)))
+        # Don't append
+        output = open(os.path.join(today + '.calibrated'), 'w')
         index = 0
         # Cycle files tomorrow.
         while not os.path.exists(tomorrow):
