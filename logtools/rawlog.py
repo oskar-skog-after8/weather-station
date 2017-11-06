@@ -161,4 +161,4 @@ class temperature():
         return 'Temperature {} Hz'.format(value)
 
 if __name__ == '__main__':
-    main([windspeed, winddirection, temperature], 100, 60, '/home/pi/elab/oskar/weatherstation/log')
+    main([windspeed, winddirection, temperature], 100, 60, '/var/log/weather')

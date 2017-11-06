@@ -47,7 +47,7 @@ def parseline(line):
     if len(parts) == 3:
         key, value, _ = parts
         function = mapping[key][0]
-        calibration = eval(open('/home/pi/elab/oskar/weatherstation/logtools/calibration').read())[key]
+        calibration = eval(open('/usr/local/lib/weather/calibration').read())[key]
         try:
             new_value = function(float(value), calibration)
         except:
@@ -63,7 +63,7 @@ def parseline(line):
         )
 
 def main():
-    logdir = '/home/pi/elab/oskar/weatherstation/log'
+    logdir = '/var/log/weather'
     # Past
     t = time.time()     # Avoid exceptionally rare race conditions.
     for n in range(1, 7):
