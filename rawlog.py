@@ -72,7 +72,7 @@ def main(routines, samplerate, log_interval, logdir):
 
 class windspeed():
     def __init__(self):
-        self.MAGNETS = 3
+        self.MAGNETS = 1
         self.SWITCHES = [11, 7, 5, 3]
         
         self.scale = 2 * self.MAGNETS * len(self.SWITCHES)
@@ -92,7 +92,7 @@ class windspeed():
         value = float(self.count) / self.scale / (time.time() - self.last_log)
         self.count = 0
         self.last_log = time.time()
-        return 'Windspeed {} Hz'.format(value)
+        return 'Windspeed {} RPM'.format(60.*value)
     
     def restore_GPIO(self):
         pass
@@ -161,4 +161,4 @@ class temperature():
         return 'Temperature {} Hz'.format(value)
 
 if __name__ == '__main__':
-    main([windspeed, winddirection, temperature], 100, 60, 'log')
+    main([windspeed, winddirection, temperature], 100, 60, '/home/pi/elab/oskar/weatherstation/log')
