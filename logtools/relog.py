@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import math
+import time
 
 def temperature(f, calibration):
     '''
@@ -26,14 +27,36 @@ def winddirection(a, calibration):
 
 
 def parseline(line):
-    '''Transform the newly read line.'''
+    '''Transform the newly read line.
+    Accepts a string without line breaks and emits a string without linebreaks.
+    '''
     pass
 
 def main():
-    pass
-
+    while True:
+        t = time.time()     # Avoid exceptionally rare race conditions.
+        today = os.path.join(logdir,
+            time.strftime('%Y-%m/%d', time.gmtime(t)))
+        tomorrow = os.path.join(logdir,
+            time.strftime('%Y-%m/%d', time.gmtime(t+86400)))
+        output = open(os.path.join(today + '.calibrated'), 'a')
+        index = 0
+        # Cycle files tomorrow.
+        while not os.path.exists(tomorrow)):
+            # Seek to previous EOF.
+            size = os.stat(today).st_size
+            if size > index:
+                input = open(today)
+                input.seek(index)
+                # Outsource the actual processing.
+                for line in filter(None, input.read().split('\n')):
+                    output.write(parseline(line) + '\n')
+                output.flush()
+                index = size
+                input.close()
+            time.sleep(10)
+        output.close()
 
 if __name__ == '__main__':
     main()
-
 
