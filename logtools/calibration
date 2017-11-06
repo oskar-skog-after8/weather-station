@@ -1,5 +1,5 @@
 {
-    'temperature': {
+    'Temperature': {
         #1/T = A + B*ln(R) + C*ln(R)^3      # Steinhart-Hart
         #R = (1/f)D - E
         #D = 1/(2*ln(2)*C1) # C1 is the capacitor
@@ -10,11 +10,11 @@
         'D': 1.5 *10**5,    # 4.7 uF
         'E': 1.1 *10**3,    # 2.2 kOhm
     },
-    'windspeed': {
+    'Windspeed': {
         # Linearly proportional.
         'k': -1.0,          # TODO
     },
-    'winddirection': {
+    'Wind-direction': {
         # Direction to north from the 0 degree pole.
         'north': 0.0,
     },

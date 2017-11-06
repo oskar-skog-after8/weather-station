@@ -1,5 +1,7 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
+import os
 import math
 import time
 
@@ -29,10 +31,25 @@ def winddirection(a, calibration):
 def parseline(line):
     '''Transform the newly read line.
     Accepts a string without line breaks and emits a string without linebreaks.
+    
+    <date> <time> <key> <value> <unit>
     '''
-    pass
+    try:
+        timestamp1, timestamp2, key, value, _ = line.split(' ')
+    except ValueError:
+        return ''
+    mapping = {
+        'Windspeed': (windspeed, 'm/s'),
+        'Wind-direction': (winddirection, '°'),
+        'Temperature': (temperature, '°C'),
+    }
+    function = mapping[key][0]
+    calibration = eval(open('/home/pi/elab/oskar/weatherstation/logtools/calibration').read())[key]
+    return '{} {} {} {} {}'.format(timestamp1, timestamp2, key,
+        function(float(value), calibration), mapping[key][1])
 
 def main():
+    logdir = '/home/pi/elab/oskar/weatherstation/log'
     while True:
         t = time.time()     # Avoid exceptionally rare race conditions.
         today = os.path.join(logdir,
@@ -42,7 +59,7 @@ def main():
         output = open(os.path.join(today + '.calibrated'), 'a')
         index = 0
         # Cycle files tomorrow.
-        while not os.path.exists(tomorrow)):
+        while not os.path.exists(tomorrow):
             # Seek to previous EOF.
             size = os.stat(today).st_size
             if size > index:
