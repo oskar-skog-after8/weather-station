@@ -1,0 +1,7 @@
+[Unit]
+Description=Weatherstation: rawlog
+After=remote-fs.target
+
+[Service]
+ExecStart=/usr/local/lib/weather/rawlog.py
+Restart=always
