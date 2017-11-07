@@ -6,6 +6,9 @@ Reset USB:
 https://raspberrypi.stackexchange.com/questions/9289/how-can-i-reset-a-usb-device-using-command-line-utilities
 https://www.raspberrypi.org/forums/viewtopic.php?t=157959
 
+Oops:
+https://hardware.slashdot.org/story/12/08/24/2228251/serious-problems-with-usb-and-ethernet-on-the-raspberry-pi
+
 Other solutions:
 ffmpeg -f video4linux2 -s 320x240 -i /dev/video0 $fullfilename
 https://github.com/jacksonliam/mjpg-streamer
