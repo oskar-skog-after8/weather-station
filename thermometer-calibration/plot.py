@@ -5,18 +5,24 @@ from matplotlib.figure import Figure
 import numpy
 import math
 
-def beta(cold=-50., hot=100., frequency_step=.05):
-    a = 3470.
-    b = 1100.
-    c = 139.574
-    d = 2.4281
+def approx(cold=-50., hot=100., frequency_step=.05):
+    constants = {'A': 0.0007251313349840727,
+     'B': 0.00017970001880764384,
+      'C': 1.1574958957074605e-06,
+       'D': 182297.81778392274,
+        'E': 1100.0}
+        
+  
+    A, B, C, D, E = [constants[key] for key in 'ABCDE']
     
     f_list = []
     T_list = []
     f = 0.0
     while True:
         f += frequency_step
-        T = a/(math.log(-b*(f-c)/f) + d) - 273.15
+        R = D/f - E
+        T = 1.0/(A + B*math.log(R) + C*math.log(R)**3)
+        T -= 273.15
         if T < cold:
             continue
         if T > hot:
@@ -40,7 +46,7 @@ def main():
     }
     for f, T, key in data:
         ax.plot(float(f), float(T), marker='.', color=colors[key])
-    ax.plot(*beta())
+    ax.plot(*approx())
     fig.set_dpi(270)
     canvas.print_png('plot.png')
 
