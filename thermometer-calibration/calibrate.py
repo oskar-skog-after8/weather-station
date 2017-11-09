@@ -43,7 +43,6 @@ def main():
         #E = R2/2           # R2 is the other resistor (between discharge and VDD)
         'A': 6.997 *10**-4, # Beta to Steinhart-Hart
         'B': 2.882 *10**-4, # Beta to Steinhart-Hart
-       #'C': 0,             # Beta to Steinhart-Hart
         'C': 1.0 *10**-7,   # Experimented
         'D': 1.5 *10**5,    # 4.7 uF
         'E': 1.07 *10**3,   # 2.14 kOhm MEASURED
