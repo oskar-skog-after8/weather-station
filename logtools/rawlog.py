@@ -119,20 +119,26 @@ class winddirection():
             GPIO.output(pin, 1)
         self.count = 0
         self.sum = 0
+        # Detect turbolence.  Keep track of which reed switches are closed.
+        self.readings = set([])
     
     def collect(self):
+        new_reading = 0
         for probe_pin, probe_value in self.PROBE:
             GPIO.output(probe_pin, 0)
             for scan_pin, scan_value in self.SCAN:
                 if not GPIO.input(scan_pin):
                     self.count += 1
                     self.sum += scan_value + probe_value
+                    new_reading |= 1<<(scan_value + probe_value)
             GPIO.output(probe_pin, 1)
+        self.readings.add(new_reading)
     
     def log(self):
-        if not self.count:
+        if len(self.readings) < 2:      # `or self.count == 0` can be omitted
             return 'Wind-direction unknown'
         average = float(self.sum) / self.count
+        self.readings = set([])
         self.sum = 0
         self.count = 0
         return 'Wind-direction {} Degrees'.format(22.5 * average)
