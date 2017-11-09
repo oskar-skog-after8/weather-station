@@ -21,7 +21,8 @@ def improve(data, initial, runs, step):
         for key in 'ABCD':
             original = constants[key]
             errors = []
-            for multiplier in (1.0 - step, 1.0, 1.0 + step):
+            # Begin with 1x to keep no change at top if the errors are all equal.
+            for multiplier in (1.0, 1.0 - step, 1.0 + step):
                 value = original * multiplier
                 constants[key] = value
                 error = calc_error(constants, data)
@@ -43,11 +44,11 @@ def main():
         'A': 6.997 *10**-4, # Beta to Steinhart-Hart
         'B': 2.882 *10**-4, # Beta to Steinhart-Hart
        #'C': 0,             # Beta to Steinhart-Hart
-        'C': 1.0 *10**-5.5, # Need to have something
+        'C': 1.0 *10**-7,   # Experimented
         'D': 1.5 *10**5,    # 4.7 uF
-        'E': 1.1 *10**3,    # 2.2 kOhm
+        'E': 1.07 *10**3,   # 2.14 kOhm MEASURED
     }
-    constants = improve(data, constants, 100, 0.01)
+    constants = improve(data, constants, 1000, 0.01)
     f = open('calibration.out', 'w')
     f.write(pprint.pformat(constants))
     f.close()
