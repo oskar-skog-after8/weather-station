@@ -1,0 +1,7 @@
+#!/bin/sh
+
+for file in 2*.jpg; do
+    gimp "$file"
+    rm "$file"
+done
+
