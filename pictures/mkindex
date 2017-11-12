@@ -17,8 +17,11 @@ END
 
 for i in $(seq -w 1 $n); do
     echo "<a href='$(echo $i.*)'><img src='thumbnails/$i.jpeg' " >>index.html
-    echo "alt='$(cat alt/$i 2>/dev/null)' " >>index.html
-    echo "title='$(cat alt/$i 2>/dev/null)' " >>index.html
+    if [ -e alt/$i ]; then
+        echo "alt='$(cat alt/$i)' title='$(cat alt/$i)' " >>index.html
+    else
+        echo "alt='' title='$i' " >>index.html
+    fi
     echo "width='96' height='96'/></a>" >>index.html
 done
 
@@ -30,6 +33,8 @@ END
 for i in $(seq -w 1 $n); do
     if [ -e alt/$i ]; then
         echo "<a href='$(echo $i.*)'>$(cat alt/$i)</a><br/>" >>index.html
+    else
+        echo "<a href='$(echo $i.*)'>$i</a><br/>" >>index.html
     fi
 done
 
