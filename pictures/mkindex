@@ -1,5 +1,7 @@
 #!/bin/sh
 
+n=104
+
 cat >index.html <<END
 <!DOCTYPE html>
 <html leng="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -9,13 +11,30 @@ cat >index.html <<END
         <title>Weather station, Pictures</title>
     </head>
     <body>
+        <p><a href="..">Parent directory</a></p>
+        <p>
 END
 
-for i in $(seq -w 1 104); do
-    echo "<a href='$(echo $i.*)'><img src='thumbnails/$i.jpeg' alt='' width='96' height='96'/></a>" >>index.html
+for i in $(seq -w 1 $n); do
+    echo "<a href='$(echo $i.*)'><img src='thumbnails/$i.jpeg' " >>index.html
+    echo "alt='$(cat alt/$i 2>/dev/null)' " >>index.html
+    echo "title='$(cat alt/$i 2>/dev/null)' " >>index.html
+    echo "width='96' height='96'/></a>" >>index.html
 done
 
 cat >>index.html <<END
+        </p>
+        <p>
+END
+
+for i in $(seq -w 1 $n); do
+    if [ -e alt/$i ]; then
+        echo "<a href='$(echo $i.*)'>$(cat alt/$i)</a><br/>" >>index.html
+    fi
+done
+
+cat >>index.html <<END
+        </p>
     </body>
 </html>
 END
