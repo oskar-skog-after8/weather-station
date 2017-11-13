@@ -1,6 +1,6 @@
 #!/bin/sh
 
-n=104
+n=115
 
 cat >index.html <<END
 <!DOCTYPE html>
