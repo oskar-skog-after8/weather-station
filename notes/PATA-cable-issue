@@ -1,0 +1,20 @@
+Modern PATA cables (those that contain 80 wires) have several pins shorted to
+a ground and some connectors even have a few pins disconnected.
+
+The 40 other wires are the grounds isolating the signals from each other,
+they are connected to something that resembles a sawblade. The sawblade has
+a few springs that short out to various pins.
+
+
+To fix the issue, remove the connectors from the cable and remove the blade
+from the connectors.
+
+Wires from the cable can be pushed back into the teeth using a small knife.
+
+
+Pictures:
+    023
+    026
+    043
+    044
+
