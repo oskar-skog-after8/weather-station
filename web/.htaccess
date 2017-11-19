@@ -1,0 +1,15 @@
+Options +ExecCGI
+AddHandler cgi-script .cgi
+
+Header set X-Robots-Tag noindex
+
+AddType text/plain .calibrated
+<FilesMatch "^[^.]+$">
+    ForceType text/plain
+</FilesMatch>
+
+#<Location /stuff/web>
+#    DirectoryIndex index.missing
+#    Options -ExecCGI
+#    RemoveHandler .cgi
+#</Location>
