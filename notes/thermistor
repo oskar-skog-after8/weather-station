@@ -1,0 +1,19 @@
+\$f=\frac{1}{\ln(2)\cdot{C_1}\cdot(2R_1+R_2)}\$
+
+
+Beta equation
+-------------
+
+\$R=R_0\cdot{e^{-\beta(\frac{1}{T_0}-\frac{1}{T})}}\$
+
+\$T_0\$ is the specified temperature at which \$R = R_0\$ (25°C in this case). \$R_0\$ is the specified resistance (10 kohm in this case).
+
+
+Steinhart-Hart
+--------------
+
+This is supposedly a more accurate approximation of NTC thermistors than the beta equation.
+
+\$\frac{1}{T}=A+B\cdot{\ln(R)}+C\cdot{\ln(R)^3}\$
+
+\$A\$, \$B\$ and \$C\$ are the constants that define the curve
