@@ -48,6 +48,6 @@ The numerical method requires initial values:
   where \$T_0\$, \$R_0\$ and \$\beta\$ are specified in the datasheet for
   the thermistor.  (25°C, 10 kohm and 3470)
 
-- \$C\$ is very small compared to \$A$\ and \$B\$, but for the calibration
+- \$C\$ is very small compared to \$A\$ and \$B\$, but for the calibration
   script to work, it must have a positive value.  I selected it by trial
   and error.
