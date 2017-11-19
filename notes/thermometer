@@ -15,7 +15,7 @@ Beta equation
 \$T_0\$ is the specified temperature at which \$R = R_0\$ (25°C in this case).
 \$R_0\$ is the specified resistance (10 kohm in this case).
 
-\$\beta\$ is 3470 for the thermistor in question.
+\$\beta\$ is 3470 for the thermistor in question. (Cantherm MF52A2103J3470)
 
 Steinhart-Hart
 --------------
