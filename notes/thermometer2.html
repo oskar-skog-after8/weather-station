@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <style type="text/css">
+            math
+            {
+                display: none;
+            }
+        </style>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <h1></h1>
+        
+        <h2>555 timer</h2>
+        <p><script type="math/tex">
+            f=\frac{1}{\ln(2)\cdot{C_1}\cdot(2R_1+R_2)}
+        </script></p>
+        <p>
+            <script type="math/tex">\$C_1\$</script> is the capacitor of
+            4.7 µF, <script type="math/tex">\$R_1\$</script> is the thermistor
+            and <script type="math/tex">\$R_2\$</script> is the resistor
+            (measured to 2.14 kohm) between the discharge pin and VDD.
+        </p>
+        
+        <h2>Beta equation</h2>
+        <p><script type="math/tex">
+            \$R=R_0\cdot{e^{-\beta(\frac{1}{T_0}-\frac{1}{T})}}\$
+        </script></p>
+        <p>
+            <script type="math/tex">\$T_0\$</script> is the specified
+            temperature at which <script type="math/tex">\$R = R_0\$</script>
+            (25°C in this case). <script type="math/tex">\$R_0\$</script> is
+            the specified resistance (10 kohm in this case).
+        </p>
+        <p>
+            <script type="math/tex">\$\beta\$</script> is 3470 for the
+            thermistor in question. (Cantherm MF52A2103J3470)
+        </p>
+        
+        <h2>Steinhart-Hart</h2>
+        <p>
+            This is supposedly a more accurate approximation of NTC thermistors
+            than the beta equation.
+        </p>
+        <p><script type="math/tex">
+            \$\frac{1}{T}=A+B\cdot{\ln(R)}+C\cdot{\ln(R)^3}\$
+        </script></p>
+        <p>
+            <script type="math/tex">\$A\$</script>,
+            <script type="math/tex">\$B\$</script> and
+            <script type="math/tex">\$C\$</script> are the constants that
+            define the curve.
+        </p>
+        
+        <h2>Calibration</h2>
+        <p>
+            The <code>relog</code> daemon uses the Steinhart-Hart equation.
+            This requires running the calibration tool to retrieve the
+            <script type="math/tex">\$A\$</script>,
+            <script type="math/tex">\$B\$</script> and
+            <script type="math/tex">\$C\$</script> constants for the thermistor
+            and also <script type="math/tex">\$C_1\$</script> if you don't
+            happen to have a capacitance meter.
+        </p>
+        <p>
+            The constants are retrieved using a least-squares regression on
+            actual measurements.  It's a nasty equation to do it with algebra,
+            a simpler solution is to do it numerically by constantly making
+            small adjustments on all the parameters.
+        </p>
+        <p>The numerical method requires initial values:</p>
+        <ul>
+            <li>The initial value of <script type="math/tex">\$C_1\$</script>
+                should be the specified capacitance.</li>
+            <li><script type="math/tex">\$A=\frac{1}{T_0} -
+                \frac{1}{\beta}\ln(R_0)\$</script> and
+                <script type="math/tex">\$B=\frac{1}{\beta}\$</script> where
+                <script type="math/tex">\$T_0\$</script>,
+                <script type="math/tex">\$R_0\$</script> and
+                <script type="math/tex">\$\beta\$</script> are specified in the
+                datasheet for the thermistor.  (25°C, 10 kohm and 3470)</li>
+            <li><script type="math/tex">\$C\$</script> is very small compared
+                to <script type="math/tex">\$A\$</script> and
+                <script type="math/tex">\$B\$</script>, but for the calibration
+                script to work, it must have a positive value.  I selected it
+                by trial and error.</li>
+        </ul>
+    </body>
+</html>
