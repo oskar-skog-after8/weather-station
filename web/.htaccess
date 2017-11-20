@@ -1,7 +1,7 @@
 Options +ExecCGI
 AddHandler cgi-script .cgi
 
-Header set X-Robots-Tag noindex
+#Header set X-Robots-Tag noindex
 
 AddType text/plain .calibrated
 <FilesMatch "^[^.]+$">
