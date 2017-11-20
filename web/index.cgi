@@ -2,11 +2,12 @@
 # -*- coding: utf-8 -*-
 
 import calendar
+import math
 import time
 import os
 import sys
 
-def svg(speed, direction):
+def triangle(direction):
     return ''
 
 def main():
@@ -29,7 +30,7 @@ def main():
             '%Y-%m-%d %H:%M:%S',
         ))
         if parts[2] == 'Windspeed':
-            wind_speed = float(parts[3])
+            wind_speed = int(float(parts[3])+.5)
         elif parts[2] == 'Wind-direction':
             if parts[3] == 'unknown':
                 wind_direction = None
@@ -37,6 +38,23 @@ def main():
                 wind_direction = parts[3]
         elif parts[2] == 'Temperature':
             temperature = int(float(parts[3])+.5)
+    wind_direction = 67
+    # Fancy graphics:
+    circle_radius = 15
+    svg_height = 70
+    if wind_direction is not None:
+        angle = math.pi*wind_direction/180
+        x = 45
+        triangle = '<polygon points="{},{} {},{} {},{}"/>'.format(
+            (svg_height/2) + math.sin(angle) * (svg_height/2),
+            (svg_height/2) - math.cos(angle) * (svg_height/2),
+            (svg_height/2) + math.sin(angle + 45) * circle_radius,
+            (svg_height/2) - math.cos(angle + 45) * circle_radius,
+            (svg_height/2) + math.sin(angle - 45) * circle_radius,
+            (svg_height/2) - math.cos(angle - 45) * circle_radius,
+        )
+    else:
+        triangle = ''
     # Language:
     if 'fi' in os.getenv('HTTP_ACCEPT_LANGUAGE', ''):
         lang = 'fi'
@@ -65,27 +83,28 @@ def main():
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=180, height=80"/>
         <link rel="stylesheet" href="http://aftereight.fi/ae/html/base.css" type="text/css"/>
-        <link rel="stylesheet" href="/weather.css" type="text/css"/>
         <!--<link rel="icon" type="image/png" href=""/>-->
         <link rel="canonical" href="http://lab10.after8.fi/"/>
         <title>{}</title>
     </head>
     <body>
         <h1>{}</h1>
-        <div>
-            <div id="wind">
-                {}
-            </div>
-            <div id="temperature">
-                <p>{}</p>
-            </div>
-        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="160" height="{}" style="align: center;">
+            {}
+            <circle cx="{}" cy="{}" r="{}"/>
+            <text x="{}" y="{}" fill="white">{}</text>
+            <text x="90" y="35">{}</text>
+        </svg>
     </body>
 </html>\n'''.format(
         lang,
         title,
         time.strftime('%d.%m{} %H.%M{}'.format(timeword1, timeword2), time.localtime(timestamp)),
-        svg(wind_speed, wind_direction),
+        svg_height,
+        triangle,
+        (svg_height/2), (svg_height/2), circle_radius,
+        (svg_height/2)-5, (svg_height/2)+5,
+        wind_speed,
         '{} °C'.format(temperature)
     ))
 
