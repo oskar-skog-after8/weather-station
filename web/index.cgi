@@ -39,7 +39,7 @@ def main():
         elif parts[2] == 'Temperature':
             temperature = int(float(parts[3])+.5)
     # Fancy graphics:
-    circle_radius = 20
+    circle_radius = 22
     svg_height = 65
     font_size = 14
     if wind_direction is not None:
@@ -102,7 +102,7 @@ def main():
         svg_height,
         triangle,
         (svg_height/2), (svg_height/2), circle_radius,
-        (svg_height/2)-10, (svg_height/2)+(font_size/2),
+        (svg_height/2)-12, (svg_height/2)+(font_size/2)+1,
         wind_speed,
         '{}'.format(temperature)
     ))
