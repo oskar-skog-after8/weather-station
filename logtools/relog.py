@@ -25,7 +25,7 @@ def windspeed(x, calibration):
     return x*calibration['k']
 
 def winddirection(a, calibration):
-    return a+calibration['north']
+    return a-calibration['north']
 
 
 def parseline(line):
