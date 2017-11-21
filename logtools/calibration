@@ -18,7 +18,7 @@
     },
     'Windspeed': {
         # Linearly proportional.
-        'k': 0.26,
+        'k': 0.13,
     },
     'Wind-direction': {
         # Direction to north from the 0 degree pole.
