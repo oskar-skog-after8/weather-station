@@ -38,20 +38,20 @@ def main():
                 wind_direction = parts[3]
         elif parts[2] == 'Temperature':
             temperature = int(float(parts[3])+.5)
-    wind_direction = 67
     # Fancy graphics:
-    circle_radius = 15
-    svg_height = 70
+    circle_radius = 20
+    svg_height = 65
+    font_size = 14
     if wind_direction is not None:
         angle = math.pi*wind_direction/180
-        x = 45
+        x = 45*math.pi/180
         triangle = '<polygon points="{},{} {},{} {},{}"/>'.format(
             (svg_height/2) + math.sin(angle) * (svg_height/2),
             (svg_height/2) - math.cos(angle) * (svg_height/2),
-            (svg_height/2) + math.sin(angle + 45) * circle_radius,
-            (svg_height/2) - math.cos(angle + 45) * circle_radius,
-            (svg_height/2) + math.sin(angle - 45) * circle_radius,
-            (svg_height/2) - math.cos(angle - 45) * circle_radius,
+            (svg_height/2) + math.sin(angle + x) * circle_radius,
+            (svg_height/2) - math.cos(angle + x) * circle_radius,
+            (svg_height/2) + math.sin(angle - x) * circle_radius,
+            (svg_height/2) - math.cos(angle - x) * circle_radius,
         )
     else:
         triangle = ''
@@ -59,18 +59,15 @@ def main():
     if 'fi' in os.getenv('HTTP_ACCEPT_LANGUAGE', ''):
         lang = 'fi'
         title = 'Säätä'
-        timeword1 = ' klo.'
-        timeword2 = ''
+        timeword = ' klo.'
     elif 'sv' in os.getenv('HTTP_ACCEPT_LANGUAGE', ''):
         lang = 'sv'
         title = 'Vädret'
-        timeword1 = ' kl.'
-        timeword2 = ''
+        timeword = ' kl.'
     else:
         lang = 'en'
         title = 'Weather'
-        timeword1 = ' at'
-        timeword2 = " o'clock"
+        timeword = ' at'
     # XHTML
     if 'application/xhtml+xml' in os.getenv('HTTP_ACCEPT', ''):
         mime = 'application/xhtml+xml'
@@ -82,7 +79,9 @@ def main():
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=180, height=80"/>
+        <link rel="stylesheet" href="http://aftereight.fi/ae/default.css" type="text/css"/>
         <link rel="stylesheet" href="http://aftereight.fi/ae/html/base.css" type="text/css"/>
+        <link rel="stylesheet" href="/ae.css"/>
         <!--<link rel="icon" type="image/png" href=""/>-->
         <link rel="canonical" href="http://lab10.after8.fi/"/>
         <title>{}</title>
@@ -92,20 +91,20 @@ def main():
         <svg xmlns="http://www.w3.org/2000/svg" width="160" height="{}" style="align: center;">
             {}
             <circle cx="{}" cy="{}" r="{}"/>
-            <text x="{}" y="{}" fill="white">{}</text>
-            <text x="90" y="35">{}</text>
+            <text x="{}" y="{}">{} <tspan class="unit">m/s</tspan></text>
+            <text x="90" y="35">{} <tspan class="unit">°C</tspan></text>
         </svg>
     </body>
 </html>\n'''.format(
         lang,
         title,
-        time.strftime('%d.%m{} %H.%M{}'.format(timeword1, timeword2), time.localtime(timestamp)),
+        time.strftime('%d.%m{} %H.%M'.format(timeword), time.localtime(timestamp)),
         svg_height,
         triangle,
         (svg_height/2), (svg_height/2), circle_radius,
-        (svg_height/2)-5, (svg_height/2)+5,
+        (svg_height/2)-10, (svg_height/2)+(font_size/2),
         wind_speed,
-        '{} °C'.format(temperature)
+        '{}'.format(temperature)
     ))
 
 if __name__ == '__main__':
