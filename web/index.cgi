@@ -55,25 +55,50 @@ def main():
         )
     else:
         triangle = ''
+    stylesheet ='''
+#wind
+{
+    fill: #cccccc;
+}
+text
+{
+    font-family: verdana;
+    fill: #e6298b;
+    font-weight: bold;
+    font-size: 14px;
+}
+.unit
+{
+    fill: #000000;
+    font-size: 75%;
+    font-weight: normal;
+    baseline-shift: super;
+}
+'''
     # Language:
     if 'fi' in os.getenv('HTTP_ACCEPT_LANGUAGE', ''):
         lang = 'fi'
         title = 'Säätä'
         timeword = ' klo.'
+        nota_bene = 'Average weather during the last minute'
     elif 'sv' in os.getenv('HTTP_ACCEPT_LANGUAGE', ''):
         lang = 'sv'
         title = 'Vädret'
         timeword = ' kl.'
+        nota_bene = 'Genomsnittsligt väder under den senaste minuten'
     else:
         lang = 'en'
         title = 'Weather'
         timeword = ' at'
+        nota_bene = 'Average weather during the last minute'
     # XHTML
     if 'application/xhtml+xml' in os.getenv('HTTP_ACCEPT', ''):
         mime = 'application/xhtml+xml'
     else:
         mime = 'text/html'
-    sys.stdout.write('Content-Type: {}; charset=UTF-8\r\n\r\n'.format(mime))
+    sys.stdout.write('Content-Type: {}; charset=UTF-8\r\n'.format(mime))
+    sys.stdout.write('Refresh: 60\r\n')
+    sys.stdout.write('\r\n')
     sys.stdout.write('''<!DOCTYPE html>
 <html lang="{}" xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -81,7 +106,7 @@ def main():
         <meta name="viewport" content="width=180, height=80"/>
         <link rel="stylesheet" href="http://aftereight.fi/ae/default.css" type="text/css"/>
         <link rel="stylesheet" href="http://aftereight.fi/ae/html/base.css" type="text/css"/>
-        <link rel="stylesheet" href="/ae.css"/>
+        <style type="text/css">{}</style>
         <!--<link rel="icon" type="image/png" href=""/>-->
         <link rel="canonical" href="http://lab10.after8.fi/"/>
         <title>{}</title>
@@ -89,22 +114,28 @@ def main():
     <body>
         <h1>{}</h1>
         <svg xmlns="http://www.w3.org/2000/svg" width="160" height="{}" style="align: center;">
-            {}
-            <circle cx="{}" cy="{}" r="{}"/>
-            <text x="{}" y="{}">{} <tspan class="unit">m/s</tspan></text>
-            <text x="90" y="35">{} <tspan class="unit">°C</tspan></text>
+            <g id="wind">
+                {}
+                <circle cx="{}" cy="{}" r="{}"/>
+                <text x="{}" y="{}">{} <tspan class="unit">m/s</tspan></text>
+            </g>
+            <g id="temperature">
+                <text x="{}" y="{}">{} <tspan class="unit">°C</tspan></text>
+            </g>
         </svg>
+        <p class="notabene">{}</p>
     </body>
 </html>\n'''.format(
         lang,
+        stylesheet,
         title,
         time.strftime('%d.%m{} %H.%M'.format(timeword), time.localtime(timestamp)),
         svg_height,
         triangle,
         (svg_height/2), (svg_height/2), circle_radius,
-        (svg_height/2)-12, (svg_height/2)+(font_size/2)+1,
-        wind_speed,
-        '{}'.format(temperature)
+        (svg_height/2)-12, (svg_height/2)+(font_size/2), wind_speed,
+        90, (svg_height/2)+(font_size/2), temperature,
+        nota_bene,
     ))
 
 if __name__ == '__main__':
