@@ -43,15 +43,16 @@ def main():
     circle_radius = 20
     svg_height = 65
     font_size = 12
+    indent = 10
     if wind_direction is not None:
         angle = math.pi*wind_direction/180
         x = 45*math.pi/180
         triangle = '<polygon points="{},{} {},{} {},{}"/>'.format(
-            10+(svg_height/2) + math.sin(angle) * (svg_height/2),
+            indent+(svg_height/2) + math.sin(angle) * (svg_height/2),
             (svg_height/2) - math.cos(angle) * (svg_height/2),
-            10+(svg_height/2) + math.sin(angle + x) * circle_radius,
+            indent+(svg_height/2) + math.sin(angle + x) * circle_radius,
             (svg_height/2) - math.cos(angle + x) * circle_radius,
-            10+(svg_height/2) + math.sin(angle - x) * circle_radius,
+            indent+(svg_height/2) + math.sin(angle - x) * circle_radius,
             (svg_height/2) - math.cos(angle - x) * circle_radius,
         )
     else:
@@ -76,7 +77,7 @@ text
 {
     font-family: verdana;
     fill: #000000;
-    font-size: 75%;
+    font-size: 67.5%;
     font-weight: normal;
     baseline-shift: sub;
 }
@@ -85,20 +86,21 @@ text
     if 'fi' in os.getenv('HTTP_ACCEPT_LANGUAGE', ''):
         lang = 'fi'
         title = 'Säätä'
-        timeword = ' klo.'
+        timestr = '%d.%m.%Y klo. %H.%M'
     elif 'sv' in os.getenv('HTTP_ACCEPT_LANGUAGE', ''):
         lang = 'sv'
         title = 'Vädret'
-        timeword = ' kl.'
+        timestr = '%d.%m.%Y kl. %H.%M'
     else:
         lang = 'en'
         title = 'Weather'
-        timeword = ' at'
+        timestr = '%Y-%m-%d at %H:%M'
     # XHTML
     if 'application/xhtml+xml' in os.getenv('HTTP_ACCEPT', ''):
         mime = 'application/xhtml+xml'
     else:
         mime = 'text/html'
+    # Output
     sys.stdout.write('Content-Type: {}; charset=UTF-8\r\n'.format(mime))
     sys.stdout.write('Refresh: 15\r\n')
     sys.stdout.write('\r\n')
@@ -134,10 +136,10 @@ text
         title,
         svg_height,
         triangle,
-        (svg_height/2)+10, (svg_height/2), circle_radius,
-        (svg_height/2), (svg_height/2)+(font_size/2), wind_speed,
+        (svg_height/2)+indent, (svg_height/2), circle_radius,
+        (svg_height/2)+indent-5, (svg_height/2)+(font_size/2), wind_speed,
         90, (svg_height/2)+(circle_radius*2/3), temperature,
-        time.strftime('%d.%m{} %H.%M'.format(timeword), time.localtime(timestamp)),
+        time.strftime(timestr, time.localtime(timestamp)),
     ))
 
 if __name__ == '__main__':
