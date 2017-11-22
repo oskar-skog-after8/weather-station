@@ -1,6 +1,6 @@
 [Unit]
 Description=Weatherstation: relog
-After=remote-fs.target weather-rawlog.service
+After=weather-rawlog.service
 
 [Service]
 ExecStart=/usr/local/lib/weather/relog.py
