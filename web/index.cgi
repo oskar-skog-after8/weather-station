@@ -47,11 +47,11 @@ def main():
         angle = math.pi*wind_direction/180
         x = 45*math.pi/180
         triangle = '<polygon points="{},{} {},{} {},{}"/>'.format(
-            (svg_height/2) + math.sin(angle) * (svg_height/2),
+            10+(svg_height/2) + math.sin(angle) * (svg_height/2),
             (svg_height/2) - math.cos(angle) * (svg_height/2),
-            (svg_height/2) + math.sin(angle + x) * circle_radius,
+            10+(svg_height/2) + math.sin(angle + x) * circle_radius,
             (svg_height/2) - math.cos(angle + x) * circle_radius,
-            (svg_height/2) + math.sin(angle - x) * circle_radius,
+            10+(svg_height/2) + math.sin(angle - x) * circle_radius,
             (svg_height/2) - math.cos(angle - x) * circle_radius,
         )
     else:
