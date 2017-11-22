@@ -98,7 +98,7 @@ text
     else:
         mime = 'text/html'
     sys.stdout.write('Content-Type: {}; charset=UTF-8\r\n'.format(mime))
-    sys.stdout.write('Refresh: 60\r\n')
+    sys.stdout.write('Refresh: 15\r\n')
     sys.stdout.write('\r\n')
     sys.stdout.write('''<!DOCTYPE html>
 <html lang="{}" xmlns="http://www.w3.org/1999/xhtml">
