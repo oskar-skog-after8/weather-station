@@ -40,9 +40,9 @@ def main():
             else:
                 temperature = int(temperature+.5)
     # Fancy graphics:
-    circle_radius = 22
+    circle_radius = 20
     svg_height = 65
-    font_size = 14
+    font_size = 12
     if wind_direction is not None:
         angle = math.pi*wind_direction/180
         x = 45*math.pi/180
@@ -59,21 +59,26 @@ def main():
     stylesheet ='''
 #wind
 {
-    fill: #cccccc;
+    fill: #ddeedd;
+    font-size: 12px;
+}
+#temperature
+{
+    font-size: 40px;
 }
 text
 {
-    font-family: verdana;
+    font-family: impact;
     fill: #e6298b;
     font-weight: bold;
-    font-size: 14px;
 }
 .unit
 {
+    font-family: verdana;
     fill: #000000;
     font-size: 75%;
     font-weight: normal;
-    baseline-shift: super;
+    baseline-shift: sub;
 }
 '''
     # Language:
@@ -81,17 +86,14 @@ text
         lang = 'fi'
         title = 'Säätä'
         timeword = ' klo.'
-        nota_bene = 'Average weather during the last minute'
     elif 'sv' in os.getenv('HTTP_ACCEPT_LANGUAGE', ''):
         lang = 'sv'
         title = 'Vädret'
         timeword = ' kl.'
-        nota_bene = 'Genomsnittsligt väder under den senaste minuten'
     else:
         lang = 'en'
         title = 'Weather'
         timeword = ' at'
-        nota_bene = 'Average weather during the last minute'
     # XHTML
     if 'application/xhtml+xml' in os.getenv('HTTP_ACCEPT', ''):
         mime = 'application/xhtml+xml'
@@ -107,13 +109,13 @@ text
         <meta name="viewport" content="width=180, height=80"/>
         <link rel="stylesheet" href="http://aftereight.fi/ae/default.css" type="text/css"/>
         <link rel="stylesheet" href="http://aftereight.fi/ae/html/base.css" type="text/css"/>
+        <link rel="stylesheet" href="http://aftereight.fi/ae/html/default.css" type="text/css"/>
         <style type="text/css">{}</style>
         <!--<link rel="icon" type="image/png" href=""/>-->
         <link rel="canonical" href="http://lab10.after8.fi/"/>
         <title>{}</title>
     </head>
     <body>
-        <h1>{}</h1>
         <svg xmlns="http://www.w3.org/2000/svg" width="160" height="{}" style="align: center;">
             <g id="wind">
                 {}
@@ -124,19 +126,18 @@ text
                 <text x="{}" y="{}">{} <tspan class="unit">°C</tspan></text>
             </g>
         </svg>
-        <p class="notabene">{}</p>
+        <h2>{}</h2>
     </body>
 </html>\n'''.format(
         lang,
         stylesheet,
         title,
-        time.strftime('%d.%m{} %H.%M'.format(timeword), time.localtime(timestamp)),
         svg_height,
         triangle,
-        (svg_height/2), (svg_height/2), circle_radius,
-        (svg_height/2)-12, (svg_height/2)+(font_size/2), wind_speed,
-        90, (svg_height/2)+(font_size/2), temperature,
-        nota_bene,
+        (svg_height/2)+10, (svg_height/2), circle_radius,
+        (svg_height/2), (svg_height/2)+(font_size/2), wind_speed,
+        90, (svg_height/2)+(circle_radius*2/3), temperature,
+        time.strftime('%d.%m{} %H.%M'.format(timeword), time.localtime(timestamp)),
     ))
 
 if __name__ == '__main__':
