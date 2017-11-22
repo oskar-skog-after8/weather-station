@@ -7,9 +7,6 @@ import time
 import os
 import sys
 
-def triangle(direction):
-    return ''
-
 def main():
     # Gather data from the log files.
     logfile = open(time.strftime(
@@ -37,7 +34,11 @@ def main():
             else:
                 wind_direction = float(parts[3])
         elif parts[2] == 'Temperature':
-            temperature = int(float(parts[3])+.5)
+            temperature = float(parts[3])
+            if temperature < 0:
+                temperature = int(temperature-.5)
+            else:
+                temperature = int(temperature+.5)
     # Fancy graphics:
     circle_radius = 22
     svg_height = 65
