@@ -35,7 +35,7 @@ def main():
             if parts[3] == 'unknown':
                 wind_direction = None
             else:
-                wind_direction = parts[3]
+                wind_direction = float(parts[3])
         elif parts[2] == 'Temperature':
             temperature = int(float(parts[3])+.5)
     # Fancy graphics:
