@@ -41,7 +41,7 @@ def main():
                 temperature = int(temperature+.5)
     # Fancy graphics:
     if wind_speed < 10:
-        wind_speed = '&#160;' + str(wind_speed)
+        wind_speed = '&#160;{}&#160;'.format(wind_speed)
     circle_radius = 22
     svg_height = 66
     font_size = 25
@@ -77,7 +77,7 @@ text
 {
     font-family: impact;
     fill: #e6298b;
-    font-weight: bold;
+    font-weight: normal;
 }
 .unit
 {
