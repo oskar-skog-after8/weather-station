@@ -40,9 +40,11 @@ def main():
             else:
                 temperature = int(temperature+.5)
     # Fancy graphics:
-    circle_radius = 20
-    svg_height = 65
-    font_size = 12
+    if wind_speed < 10:
+        wind_speed = '&#160;' + str(wind_speed)
+    circle_radius = 22
+    svg_height = 66
+    font_size = 25
     indent = 10
     if wind_direction is not None:
         angle = math.pi*wind_direction/180
@@ -60,8 +62,12 @@ def main():
     stylesheet ='''
 #wind
 {
-    fill: #ddeedd;
-    font-size: 12px;
+    fill: #ccddcc;
+    font-size: 25px;
+}
+#wind polygon
+{
+    fill: #b5c4b5;
 }
 #temperature
 {
@@ -77,9 +83,23 @@ text
 {
     font-family: verdana;
     fill: #000000;
-    font-size: 67.5%;
+    font-size: 10pt;
     font-weight: normal;
+}
+#wind .unit
+{
     baseline-shift: sub;
+}
+
+body
+{
+    width: 180px;
+}
+p
+{
+    text-align: center;
+    margin-top: 0;
+    font-family: verdana;
 }
 '''
     # Language:
@@ -118,17 +138,17 @@ text
         <title>{}</title>
     </head>
     <body>
-        <svg xmlns="http://www.w3.org/2000/svg" width="160" height="{}" style="align: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="180" height="{}" style="align: center;">
             <g id="wind">
                 {}
                 <circle cx="{}" cy="{}" r="{}"/>
-                <text x="{}" y="{}">{} <tspan class="unit">m/s</tspan></text>
+                <text x="{}" y="{}">{} <tspan class="unit">&#160;m/s</tspan></text>
             </g>
             <g id="temperature">
                 <text x="{}" y="{}">{} <tspan class="unit">°C</tspan></text>
             </g>
         </svg>
-        <h2>{}</h2>
+        <div id="p"><p>{}</p></div>
     </body>
 </html>\n'''.format(
         lang,
@@ -137,8 +157,8 @@ text
         svg_height,
         triangle,
         (svg_height/2)+indent, (svg_height/2), circle_radius,
-        (svg_height/2)+indent-5, (svg_height/2)+(font_size/2), wind_speed,
-        90, (svg_height/2)+(circle_radius*2/3), temperature,
+        (svg_height/2)+indent-13, (svg_height/2)+(font_size/2)-4, wind_speed,
+        100, (svg_height/2)+(circle_radius*2/3), temperature,
         time.strftime(timestr, time.localtime(timestamp)),
     ))
 
