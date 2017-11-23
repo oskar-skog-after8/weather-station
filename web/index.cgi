@@ -98,7 +98,7 @@ body
 p
 {
     text-align: center;
-    margin-top: 0;
+    margin-top: -10px;
     font-family: verdana;
 }
 '''
@@ -128,7 +128,7 @@ p
 <html lang="{}" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8"/>
-        <meta name="viewport" content="width=180, height=80"/>
+        <meta name="viewport" content="width=180, height=74"/>
         <link rel="stylesheet" href="http://aftereight.fi/ae/default.css" type="text/css"/>
         <link rel="stylesheet" href="http://aftereight.fi/ae/html/base.css" type="text/css"/>
         <link rel="stylesheet" href="http://aftereight.fi/ae/html/default.css" type="text/css"/>
