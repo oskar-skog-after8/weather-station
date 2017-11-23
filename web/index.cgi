@@ -148,7 +148,7 @@ p
                 <text x="{}" y="{}">{} <tspan class="unit">°C</tspan></text>
             </g>
         </svg>
-        <div id="p"><p>{}</p></div>
+        <!--<p>{}</p>-->
     </body>
 </html>\n'''.format(
         lang,
