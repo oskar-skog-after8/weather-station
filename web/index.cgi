@@ -9,9 +9,14 @@ import sys
 
 def main():
     # Gather data from the log files.
-    logfile = open(time.strftime(
-        '/var/log/weather/%Y-%m/%d.calibrated', time.gmtime()
-    ))
+    try:
+        logfile = open(time.strftime(
+            '/var/log/weather/%Y-%m/%d.calibrated', time.gmtime()
+        ))
+    except IOError:
+        logfile = open(time.strftime(
+            '/var/log/weather/%Y-%m/%d.calibrated', time.gmtime() - 86400
+        ))
     timestamp = 0
     wind_speed = 0
     wind_direction = 0
