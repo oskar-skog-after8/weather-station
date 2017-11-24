@@ -9,8 +9,7 @@ AddType text/plain .calibrated
 </FilesMatch>
 
 RewriteEngine on
-#RewriteCond %{REQUEST_URI} ^/stuff/web/log/
-RewriteRule ^/stuff/web/log/(.*) /log/$1 [R=302]
+RedirectMatch 302 /stuff/web/(.*/.*) /$1
 
 #<Location /stuff/web/>
 #    DirectoryIndex index.missing
