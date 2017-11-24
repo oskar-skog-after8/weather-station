@@ -9,7 +9,7 @@ AddType text/plain .calibrated
 </FilesMatch>
 
 RewriteEngine on
-RedirectMatch 302 /stuff/web/(.*/.*) /$1
+RedirectMatch 301 /stuff/web/(.*/.*) /$1
 
 #<Location /stuff/web/>
 #    DirectoryIndex index.missing
