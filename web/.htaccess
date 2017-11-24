@@ -12,8 +12,16 @@ RewriteEngine on
 #RewriteCond %{REQUEST_URI} ^/stuff/web/log/
 RewriteRule ^/stuff/web/log/(.*) /log/$1 [R=302]
 
-#<Location /stuff/web>
+#<Location /stuff/web/>
 #    DirectoryIndex index.missing
 #    Options -ExecCGI
 #    RemoveHandler .cgi
 #</Location>
+
+<Files /stuff/pictures/alt/*>
+    Header set X-Robots-Tag noindex
+</Files>
+<Files /stuff/pictures/thumbnails/*>
+    Header set X-Robots-Tag noindex
+</Files>
+
