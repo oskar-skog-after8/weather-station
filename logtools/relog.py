@@ -66,7 +66,10 @@ def main():
     for n in range(1, 7):
         name = os.path.join( \
             logdir, time.strftime('%Y-%m/%d', time.gmtime(t-n*86400)))
-        input = open(name)
+        try:
+            input = open(name)
+        except IOError:
+            break
         output = open(name + '.calibrated', 'w')
         for line in filter(None, input.read().split('\n')):
             output.write(parseline(line) + '\n')
