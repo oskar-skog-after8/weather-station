@@ -18,10 +18,4 @@ RewriteRule ^/stuff/web/log/(.*) /log/$1 [R=302]
 #    RemoveHandler .cgi
 #</Location>
 
-<Files /stuff/pictures/alt/*>
-    Header set X-Robots-Tag noindex
-</Files>
-<Files /stuff/pictures/thumbnails/*>
-    Header set X-Robots-Tag noindex
-</Files>
 
