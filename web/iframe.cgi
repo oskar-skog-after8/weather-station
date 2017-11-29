@@ -15,7 +15,7 @@ def main():
         ))
     except IOError:
         logfile = open(time.strftime(
-            '/var/log/weather/%Y-%m/%d.calibrated', time.gmtime() - 86400
+            '/var/log/weather/%Y-%m/%d.calibrated', time.gmtime(time.time() - 86400)
         ))
     timestamp = 0
     wind_speed = 0
