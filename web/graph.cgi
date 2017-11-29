@@ -6,17 +6,25 @@ import time
 
 def main():
     '''
-    sum=1
-    len=
+    timespan=1h
     key=t|w
     days=1
+    
+    avg=1
+    
+    width=
+    height=
+    round=5
     '''
     form = cgi.FieldStorage()
-    days = int(form.get('days'))
-    key = {'t': 'Temperature', 'w': 'Windspeed'}[form.get('key')]
-    
     # Read log files:
+    days = int(form.get('days'))
     days += 1
+    key = {'t': 'Temperature', 'w': 'Windspeed'}[form.get('key')]
+    timespan = form.get('timespan')
+    timespan_n = float(timespan.rstrip('wdhms'))
+    timespan_k = timespan.lstrip('0123456789.')
+    timespan = timespan_n * {'': 1, 's': 1, 'm': 60, 'h': 3600, 'd': 86400, 'w': 640800}[timespan_k]
     log = []
     for i in range(-days, 1):
         try:
@@ -43,5 +51,18 @@ def main():
                     ' '.join(parts[:2]),
                     '%Y-%m-%d %H:%M:%S'
                 ))
-                log.append((timestamp, value))
-    #
+                if time.time() - timestamp < timespan:
+                    log.append((timestamp, value))
+    # Average multiple datapoints into one
+    avg = int(form.get('avg'))
+    log2 = []
+    i = 0
+    while i < len(log):
+        sample = filter(lambda x: x[1] is not None, log[i:i+avg])
+        i + = avg
+        a = sum(map(lambda x: x[0], sample))
+        b = sum(map(lambda x: x[1], sample))
+        n = len(sample)
+        if n:
+            log2.append((a/n, b/n))
+    # 
