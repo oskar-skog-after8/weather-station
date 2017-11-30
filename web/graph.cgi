@@ -27,7 +27,7 @@ def main():
     ## Read log files:
     days = int(form.getfirst('days'))
     days += 1
-    key = {'t': 'Temperature', 'w': 'Windspeed'}[form.getfirst('key')]
+    key = {'t': 'Temperature', 'w': 'Windspeed', 'w-d': 'Wind-direction'}[form.getfirst('key')]
     timespan = form.getfirst('timespan')
     timespan_n = float(timespan.rstrip('wdhms'))
     timespan_k = timespan.lstrip('0123456789.')
@@ -50,9 +50,9 @@ def main():
             if len(parts) not in (4, 5):
                 continue
             if parts[2] == key:
-                if parts[3] != 'unknown':
+                try:
                     value = float(parts[3])
-                else:
+                except:
                     value = None
                 timestamp = calendar.timegm(time.strptime(
                     ' '.join(parts[:2]),
@@ -84,7 +84,7 @@ def main():
     graph_width = width - left_margin - right_margin
     graph_height = height - top_margin - bottom_margin
     ## Heading
-    sys.stdout.write('Content-Type: image/svg\r\n')
+    sys.stdout.write('Content-Type: image/svg+xml\r\n')
     sys.stdout.write('\r\n')
     sys.stdout.write('<svg xmlns="http://www.w3.org/2000/svg" ')
     sys.stdout.write('width="{}" height="{}">\n'.format(width, height))
@@ -109,10 +109,17 @@ def main():
         }
     </style>\n''')
     ## Y divisions
-    round = int(form.getfirst('round'))
-    values = map(lambda x: x[1], log)
-    low = int(round * math.floor(min(values) / round))
-    high = int(round * math.ceil(max(values) / round))
+    if key == 'Wind-direction':
+        round = 45
+        low = 0
+        high = 360
+        log = map(lambda x: (x[0], x[1]%360), log)
+    else:
+        round = int(form.getfirst('round'))
+        values = map(lambda x: x[1], log)
+        low = int(round * math.floor(min(values) / round))
+        high = int(round * math.ceil(max(values) / round))
+        del values
     # Avoid overlapping numbers
     spacing = graph_height / ((high-low)/round)
     modus = round * math.ceil(number_size/spacing)
