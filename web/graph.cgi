@@ -23,6 +23,7 @@ def main():
     label-size
     '''
     form = cgi.FieldStorage()
+    start_time = time.time()
     ## Read log files:
     days = int(form.getfirst('days'))
     days += 1
@@ -57,7 +58,7 @@ def main():
                     ' '.join(parts[:2]),
                     '%Y-%m-%d %H:%M:%S'
                 ))
-                if time.time() - timestamp < timespan:
+                if start_time - timestamp < timespan:
                     log.append((timestamp, value))
     ## Average multiple datapoints into one
     avg = int(form.getfirst('avg'))
@@ -88,21 +89,23 @@ def main():
     sys.stdout.write('<svg xmlns="http://www.w3.org/2000/svg" ')
     sys.stdout.write('width="{}" height="{}">\n'.format(width, height))
     sys.stdout.write('''    <style type="text/css">
-        line
+        .line
         {
             stroke: black;
             stroke-width: 1px;
         }
-        number
+        .number
         {
         }
-        label
+        .label
         {
         }
-        graph
+        .graph
         {
             stroke: red;
             stroke-width: 2px;
+            stroke-linejoin: round;
+            stroke-linecap: round;
         }
     </style>\n''')
     ## Y divisions
@@ -113,7 +116,7 @@ def main():
     # Avoid overlapping numbers
     spacing = graph_height / ((high-low)/round)
     modus = round * math.ceil(number_size/spacing)
-    for y in range(low, high+1, round):
+    for y in range(0, high-low+1, round):
         sys.stdout.write('    <line class="line" ')
         sys.stdout.write('x1="{0}" x2="{1}" y1="{2}" y2="{2}"/>\n'.format(
             left_margin - number_size,
@@ -127,9 +130,31 @@ def main():
                 height-y*graph_height/(high-low)-bottom_margin+number_size/2,
                 number_size
             ))
-            sys.stdout.write('{}</text>\n'.format(y))
+            sys.stdout.write('{}</text>\n'.format(y + low))
     ## X divisions
     divisions = int(form.getfirst('divisions'))
+    for i in range(divisions + 1):
+        sys.stdout.write('    <line class="line" ')
+        sys.stdout.write('x1="{0}" x2="{0}" y1="{1}" y2="{2}"/>\n'.format(
+            left_margin + (float(i)/divisions) * graph_width,
+            top_margin,
+            height
+        ))
+    ## Plot graph
+    for i in range(len(log) - 1):
+        x1 = (log[i][0]-start_time+timespan)/timespan
+        x2 = (log[i+1][0]-start_time+timespan)/timespan
+        y1 = (log[i][1]-low) / (high-low)
+        y2 = (log[i+1][1]-low) / (high-low)
+        sys.stdout.write('    <line class="graph" ')
+        sys.stdout.write('x1="{}" y1="{}" x2="{}" y2="{}"/>\n'.format(
+            left_margin + x1*graph_width,
+            height - bottom_margin - y1*graph_height,
+            left_margin + x2*graph_width,
+            height - bottom_margin - y2*graph_height,
+        ))
+    ##
+    sys.stdout.write('</svg>\n')
 
 
 if __name__ == '__main__':
