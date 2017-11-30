@@ -78,17 +78,20 @@ def main():
     number_size = float(form.getfirst('number-size'))
     label_size = float(form.getfirst('label-size'))
     left_margin = label_size + 3*number_size + 1
-    bottom_margin = top_margin = right_margin = number_size/2
+    top_margin = right_margin = number_size/2
+    bottom_margin = label_size + 1 + number_size/2
     graph_width = width - left_margin - right_margin
     graph_height = height - top_margin - bottom_margin
     ## Heading
     sys.stdout.write('Content-Type: image/svg\r\n')
     sys.stdout.write('\r\n')
-    sys.stdout.write('<svg xmlns="http://www.w3.org/2000/svg"')
-    sys.stdout.write(' width="{}" height="{}">\n'.format(width, height))
+    sys.stdout.write('<svg xmlns="http://www.w3.org/2000/svg" ')
+    sys.stdout.write('width="{}" height="{}">\n'.format(width, height))
     sys.stdout.write('''    <style type="text/css">
         line
         {
+            stroke: black;
+            stroke-width: 1px;
         }
         number
         {
@@ -111,19 +114,20 @@ def main():
     spacing = graph_height / ((high-low)/round)
     modus = round * math.ceil(number_size/spacing)
     for y in range(low, high+1, round):
-        sys.stdout.write('    <line class="line"')
-        sys.stdout.write(' x1="{0}" x2="{1}" y1="{2}" y2="{2}"/>\n'.format(
+        sys.stdout.write('    <line class="line" ')
+        sys.stdout.write('x1="{0}" x2="{1}" y1="{2}" y2="{2}"/>\n'.format(
             left_margin - number_size,
             width,
             height - y * graph_height/(high-low) - bottom_margin
         ))
         if not y%modus:
-            sys.stdout.write('    <text class="number"')
-            sys.stdout.write('x="{}" y="{}" font-size="{}"/>\n'.format(
+            sys.stdout.write('    <text class="number" ')
+            sys.stdout.write('x="{}" y="{}" font-size="{}">'.format(
                 label_size + 1,
-                height-y*graph_height/(high-low)-number_size/2-bottom_margin,
+                height-y*graph_height/(high-low)-bottom_margin+number_size/2,
                 number_size
             ))
+            sys.stdout.write('{}</text>\n'.format(y))
     ## X divisions
     divisions = int(form.getfirst('divisions'))
 
