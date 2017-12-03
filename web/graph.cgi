@@ -3,14 +3,14 @@
 import calendar
 import cgi
 import math
+import os
 import sys
 import time
 
-def main():
+def graph():
     '''
     timespan=1h
     key=t|w
-    days=1
     
     avg=1
     
@@ -25,13 +25,12 @@ def main():
     form = cgi.FieldStorage()
     start_time = time.time()
     ## Read log files:
-    days = int(form.getfirst('days'))
-    days += 1
     key = {'t': 'Temperature', 'w': 'Windspeed', 'w-d': 'Wind-direction'}[form.getfirst('key')]
     timespan = form.getfirst('timespan')
     timespan_n = float(timespan.rstrip('wdhms'))
     timespan_k = timespan.lstrip('0123456789.')
     timespan = timespan_n * {'': 1, 's': 1, 'm': 60, 'h': 3600, 'd': 86400, 'w': 640800}[timespan_k]
+    days = int(math.ceil(timespan/86400.)) + 1
     log = []
     for i in range(-days, 1):
         try:
@@ -163,7 +162,61 @@ def main():
     ##
     sys.stdout.write('</svg>\n')
 
-
 if __name__ == '__main__':
-    main()
+    if os.getenv('QUERY_STRING'):
+        graph()
+    else:
+        if 'application/xhtml+xml' in os.getenv('HTTP_ACCEPT', ''):
+            sys.stdout.write('Content-Type: application/xhtml+xml; charset=utf-8\r\n')
+        else:
+            sys.stdout.write('Content-Type: text/html; charset=UTF-8\r\n')
+        sys.stdout.write('\r\n')
+        sys.stdout.write('''<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <meta name="robots" content="noindex"/>
+        <title>Graphs</title>
+    </head>
+    <body>
+        <h1>Graphs</h1>
+        <form action="/graph.cgi" method="GET">
+            <input type="radio" name="key" value="t"/> Temperature<br/>
+            <input type="radio" name="key" value="w"/> Windspeed<br/>
+            <input type="radio" name="key" value="w-d"/> Wind direction<br/>
+            <table>
+                <tr>
+                    <td>Timespan (number + "w", "d", "h" or "m"):</td>
+                    <td><input type="text" name="timespan" value="15m"/></td>
+                </tr>
+                <tr>
+                    <td>Sum together N points:</td>
+                    <td><input type="text" name="avg" value="1"/></td>
+                </tr>
+                <tr>
+                    <td>Round vertical divisions to:</td>
+                    <td><input type="text" name="round" value="5"/></td>
+                </tr>
+                <tr>
+                    <td>N horizontal divisions:</td>
+                    <td><input type="text" name="divisions" value="1"/></td>
+                </tr>
+                <tr>
+                    <td>Width x Height:</td>
+                    <td>
+                        <input type="text" name="width" value="720"/>
+                        x <input type="text" name="height" value="400"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Number font size:</td>
+                    <td><input type="text" name="number-size" value="12"/></td>
+                </tr>
+                <input type="hidden" name="label-size" value="20"/>
+            </table>
+            <input type="submit"/>
+        </form>
+    </body>
+</html>\n''')
 
