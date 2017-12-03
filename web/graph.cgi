@@ -199,28 +199,31 @@ if __name__ == '__main__':
                 </tr>
                 <tr>
                     <td>Sum together N points:</td>
-                    <td><input type="text" name="avg" value="1"/></td>
+                    <td><input type="number" name="avg" min="1" step="1" value="1"/></td>
                 </tr>
                 <tr>
                     <td>Round vertical divisions to:</td>
-                    <td><input type="text" name="round" value="5"/></td>
+                    <td><input type="number" name="round" min="1" step="1" value="1"/></td>
                 </tr>
                 <tr>
                     <td>N horizontal divisions:</td>
-                    <td><input type="text" name="divisions" value="1"/></td>
+                    <td><input type="number" name="divisions" min="1" step="1" value="1"/></td>
                 </tr>
                 <tr>
                     <td>Width x Height:</td>
                     <td>
-                        <input type="text" name="width" value="720"/>
-                        x <input type="text" name="height" value="400"/>
+                        <input type="number" name="width" value="720" min="160" step="8"/>
+                        x <input type="number" name="height" value="400" min="96" step="8"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Number font size:</td>
-                    <td><input type="text" name="number-size" value="12"/></td>
+                    <td><input type="number" name="number-size" value="12" min="0" max="24" step="0.5"/></td>
                 </tr>
-                <input type="hidden" name="label-size" value="20"/>
+                <tr>
+                    <td>Label font size:</td>
+                    <td><input type="number" name="label-size" value="20" min="0" max="40" step="0.5"/></td>
+                </tr>
             </table>
             <input type="submit"/>
         </form>
