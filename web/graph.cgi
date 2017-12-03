@@ -88,6 +88,11 @@ def graph():
     sys.stdout.write('<svg xmlns="http://www.w3.org/2000/svg" ')
     sys.stdout.write('width="{}" height="{}">\n'.format(width, height))
     sys.stdout.write('''    <style type="text/css">
+        .background
+        {
+            fill: white;
+            stroke-width: 0;
+        }
         .line
         {
             stroke: black;
@@ -107,6 +112,8 @@ def graph():
             stroke-linecap: round;
         }
     </style>\n''')
+    sys.stdout.write('<rect class="background" x="0" y="0" ')
+    sys.stdout.write('width="{}" height="{}"/>\n'.format(width, height))
     ## Y divisions
     if key == 'Wind-direction':
         round = 45

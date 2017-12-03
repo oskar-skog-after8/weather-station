@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="400">
+    <style type="text/css">
+        .background
+        {
+            fill: white;
+            stroke-width: 0;
+        }
+        .line
+        {
+            stroke: black;
+            stroke-width: 1px;
+        }
+        .number
+        {
+        }
+        .label
+        {
+        }
+        .graph
+        {
+            stroke: red;
+            stroke-width: 2px;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+        }
+    </style>
+<rect class="background" x="0" y="0" width="720" height="400"/>
+    <line class="line" x1="45.0" x2="720" y1="373.0" y2="373.0"/>
+    <text class="number" x="21.0" y="379.0" font-size="12.0">-5</text>
+    <line class="line" x1="45.0" x2="720" y1="189.5" y2="189.5"/>
+    <text class="number" x="21.0" y="195.5" font-size="12.0">0</text>
+    <line class="line" x1="45.0" x2="720" y1="6.0" y2="6.0"/>
+    <text class="number" x="21.0" y="12.0" font-size="12.0">5</text>
+    <line class="line" x1="57.0" x2="57.0" y1="6.0" y2="400"/>
+    <line class="line" x1="714.0" x2="714.0" y1="6.0" y2="400"/>
+    <line class="graph" x1="59.6047289944" y1="187.714412427" x2="104.134728994" y2="190.659865223"/>
+    <line class="graph" x1="104.134728994" y1="190.659865223" x2="149.394728994" y2="193.936674185"/>
+    <line class="graph" x1="149.394728994" y1="193.936674185" x2="193.924728994" y2="199.76635053"/>
+    <line class="graph" x1="193.924728994" y1="199.76635053" x2="238.454728994" y2="199.092299027"/>
+    <line class="graph" x1="238.454728994" y1="199.092299027" x2="282.984728994" y2="198.846951542"/>
+    <line class="graph" x1="282.984728994" y1="198.846951542" x2="327.514728994" y2="199.238865239"/>
+    <line class="graph" x1="327.514728994" y1="199.238865239" x2="372.774728994" y2="202.230725093"/>
+    <line class="graph" x1="372.774728994" y1="202.230725093" x2="417.304728994" y2="200.59373002"/>
+    <line class="graph" x1="417.304728994" y1="200.59373002" x2="461.834728994" y2="200.673399692"/>
+    <line class="graph" x1="461.834728994" y1="200.673399692" x2="506.364728994" y2="199.087095892"/>
+    <line class="graph" x1="506.364728994" y1="199.087095892" x2="551.624728994" y2="199.587968697"/>
+    <line class="graph" x1="551.624728994" y1="199.587968697" x2="596.154728994" y2="199.610704001"/>
+    <line class="graph" x1="596.154728994" y1="199.610704001" x2="640.684728994" y2="201.625288381"/>
+    <line class="graph" x1="640.684728994" y1="201.625288381" x2="685.944728994" y2="201.706230056"/>
+</svg>
