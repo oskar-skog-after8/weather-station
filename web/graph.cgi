@@ -159,12 +159,12 @@ def graph():
         x2 = (log[i+1][0]-start_time+timespan)/timespan
         y1 = (log[i][1]-low) / (high-low)
         y2 = (log[i+1][1]-low) / (high-low)
-        sys.stdout.write('    <line class="graph" ')
+        sys.stdout.write('<line class="graph" ')
         sys.stdout.write('x1="{}" y1="{}" x2="{}" y2="{}"/>\n'.format(
-            left_margin + x1*graph_width,
-            height - bottom_margin - y1*graph_height,
-            left_margin + x2*graph_width,
-            height - bottom_margin - y2*graph_height,
+            int(0.5 + left_margin + x1*graph_width),
+            int(0.5 + height - bottom_margin - y1*graph_height),
+            int(0.5 + left_margin + x2*graph_width),
+            int(0.5 + height - bottom_margin - y2*graph_height),
         ))
     ##
     sys.stdout.write('</svg>\n')
