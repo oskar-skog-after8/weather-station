@@ -207,7 +207,7 @@ if __name__ == '__main__':
     <body>
         <h1>Graphs</h1>
         <form action="/graph.cgi" method="GET">
-            <input type="radio" name="key" value="t"/> Temperature<br/>
+            <input type="radio" name="key" value="t" checked="checked"/> Temperature<br/>
             <input type="radio" name="key" value="w"/> Windspeed<br/>
             <input type="radio" name="key" value="w-d"/> Wind direction<br/>
             <table>
@@ -241,6 +241,14 @@ if __name__ == '__main__':
                 <tr>
                     <td>Label font size:</td>
                     <td><input type="number" name="label-size" value="20" min="0" max="40" step="0.5"/></td>
+                </tr>
+                <tr>
+                    <td>X axis label:</td>
+                    <td><input type="text" name="xlabel"/></td>
+                </tr>
+                <tr>
+                    <td>Y axis label:</td>
+                    <td><input type="text" name="ylabel"/></td>
                 </tr>
             </table>
             <input type="submit"/>
