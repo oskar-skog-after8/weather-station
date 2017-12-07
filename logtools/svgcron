@@ -1,0 +1,62 @@
+#!/bin/sh
+
+case "$1" in
+    hourly)
+        xlabel="$(date '+%H on %Y-%m-%d')"
+        filename="hourly/$(date '+%Y-%m-%d_%H')"
+        timespan=1h
+        avg=1
+        divisions=4
+        width=540
+    ;;
+    daily)
+        xlabel="$(date '+The day of %Y-%m-%d')"
+        filename="daily/$()"
+        timespan=1d
+        avg=3
+        divisions=24
+        width=960
+    ;;
+    weekly)
+        xlabel="$(date '+Week %V of year %Y')"
+        filename="weekly/$(date '+%Y-%V')"
+        timespan=1w
+        avg=15
+        divisions=7
+        width=1400
+    ;;
+    *)
+        echo "Invalid argument" >/dev/stderr
+        exit 1
+    ;;
+esac
+
+for parameter in temperature windspeed wind-direction; do
+    case $parameter in
+        temperature)
+            key=t
+            round=1
+            height=400
+        ;;
+        windspeed)
+            key=w
+            round=5
+            height=800
+        ;;
+        wind-direction)
+            key=w-d
+            round=45
+            height=600
+        ;;
+        *)
+            echo "BUG" >/dev/stderr
+            exit 1
+        ;;
+    esac
+    ylabel=$parameter
+    URL="http://lab10.after8.fi/graph.cgi?number-size=12&label-size=20"
+    for url_parameter in key timespan avg round divisions width height xlabel ylabel; do
+        URL="${URL}&${url_parameter}=$(eval echo '$'$url_parameter)"
+    done
+    wget -O "/var/www/svg/${filename}.${parameter}.svg" "$URL"
+done
