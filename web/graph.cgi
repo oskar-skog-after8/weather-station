@@ -162,12 +162,12 @@ def graph():
     ylabel = form.getfirst('ylabel', '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
     sys.stdout.write('    <text class="label" x="{0}" y="{1}" transform="rotate(90 {0} {1})" font-size="{2}">{3}</text>\n'.format(
         label_size/2,
-        height/2,
+        graph_height/2 + top_margin,
         label_size,
         ylabel
     ))
     sys.stdout.write('    <text class="label" x="{}" y="{}" font-size="{}">{}</text>\n'.format(
-        width/2,
+        graph_width/2 + left_margin,
         height - label_size/2,
         label_size,
         xlabel
