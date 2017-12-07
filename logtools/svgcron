@@ -12,7 +12,7 @@ case "$1" in
     ;;
     daily)
         xlabel="$(date '+The+day+of+%Y-%m-%d')"
-        filename="daily/$()"
+        filename="daily/$(date '+%Y-%m-%d')"
         timespan=1d
         avg=3
         divisions=24
