@@ -124,11 +124,12 @@ def graph():
     else:
         round = int(form.getfirst('round'))
         values = map(lambda x: x[1], log)
-        low = int(round * math.floor(min(values) / round))
-        high = int(round * math.ceil(max(values) / round))
+        low = round * int(math.floor(min(values) / round))
+        high = round * int(math.ceil(max(values) / round))
         if low == high:
             low -= 1
             high += 1
+            round = 1
         del values
     # Avoid overlapping numbers
     spacing = graph_height / ((high-low)/round)
