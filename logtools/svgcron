@@ -2,7 +2,7 @@
 
 case "$1" in
     hourly)
-        xlabel="$(date '+%H on %Y-%m-%d')"
+        xlabel="$(date '+%H+on+%Y-%m-%d')"
         filename="hourly/$(date '+%Y-%m-%d_%H')"
         timespan=1h
         avg=1
@@ -10,7 +10,7 @@ case "$1" in
         width=540
     ;;
     daily)
-        xlabel="$(date '+The day of %Y-%m-%d')"
+        xlabel="$(date '+The+day+of+%Y-%m-%d')"
         filename="daily/$()"
         timespan=1d
         avg=3
@@ -18,7 +18,7 @@ case "$1" in
         width=960
     ;;
     weekly)
-        xlabel="$(date '+Week %V of year %Y')"
+        xlabel="$(date '+Week+%V+of+year+%Y')"
         filename="weekly/$(date '+%Y-%V')"
         timespan=1w
         avg=15
@@ -37,23 +37,26 @@ for parameter in temperature windspeed wind-direction; do
             key=t
             round=1
             height=400
+            ylabel="°C"
         ;;
         windspeed)
             key=w
             round=5
             height=800
+            ylabel="m/s"
         ;;
         wind-direction)
             key=w-d
             round=45
             height=600
+            ylabel="°"
         ;;
         *)
             echo "BUG" >/dev/stderr
             exit 1
         ;;
     esac
-    ylabel=$parameter
+    xlabel="$xlabel $parameter"
     URL="http://lab10.after8.fi/graph.cgi?number-size=12&label-size=20"
     for url_parameter in key timespan avg round divisions width height xlabel ylabel; do
         URL="${URL}&${url_parameter}=$(eval echo '$'$url_parameter)"

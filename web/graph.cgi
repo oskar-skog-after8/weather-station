@@ -77,9 +77,9 @@ def graph():
     height = int(form.getfirst('height'))
     number_size = float(form.getfirst('number-size'))
     label_size = float(form.getfirst('label-size'))
-    left_margin = label_size + 3*number_size + 1
+    left_margin = 2*label_size + 3*number_size
     top_margin = right_margin = number_size/2
-    bottom_margin = label_size + 1 + number_size/2
+    bottom_margin = 2*label_size + number_size/2
     graph_width = width - left_margin - right_margin
     graph_height = height - top_margin - bottom_margin
     ## Heading
@@ -143,7 +143,7 @@ def graph():
         if not y%modus:
             sys.stdout.write('    <text class="number" ')
             sys.stdout.write('x="{}" y="{}" font-size="{}">'.format(
-                label_size + 1,
+                2 * label_size,
                 height-y*graph_height/(high-low)-bottom_margin+number_size/2,
                 number_size
             ))
@@ -155,20 +155,20 @@ def graph():
         sys.stdout.write('x1="{0}" x2="{0}" y1="{1}" y2="{2}"/>\n'.format(
             left_margin + (float(i)/divisions) * graph_width,
             top_margin,
-            height
+            height - (0<i<divisions) * label_size*7/4
         ))
     ## Plot graph
     xlabel = form.getfirst('xlabel', '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
     ylabel = form.getfirst('ylabel', '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
     sys.stdout.write('    <text class="label" x="{0}" y="{1}" transform="rotate(90 {0} {1})" font-size="{2}">{3}</text>\n'.format(
-        0,
+        label_size/2,
         height/2,
         label_size,
         ylabel
     ))
     sys.stdout.write('    <text class="label" x="{}" y="{}" font-size="{}">{}</text>\n'.format(
         width/2,
-        height,
+        height - label_size/2,
         label_size,
         xlabel
     ))
