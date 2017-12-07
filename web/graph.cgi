@@ -66,11 +66,17 @@ def graph():
     while i < len(log):
         sample = filter(lambda x: x[1] is not None, log[i:i+avg])
         i += avg
-        a = sum(map(lambda x: x[0], sample))
-        b = sum(map(lambda x: x[1], sample))
         n = len(sample)
         if n:
-            temp.append((a/n, b/n))
+            timestamp = sum(map(lambda x: x[0], sample))/n
+            if key != 'Wind-direction':
+                value = sum(map(lambda x: x[1], sample))/n
+            else:
+                sin = sum(map(lambda x: math.sin(x[1] /180*math.pi), sample))/n
+                cos = sum(map(lambda x: math.cos(x[1] /180*math.pi), sample))/n
+                value = 180/math.pi* math.atan2(sin, cos)
+            temp.append((timestamp, value))
+
     log = temp
     ## Calculate margins
     width = int(form.getfirst('width'))
@@ -176,15 +182,29 @@ def graph():
     for i in range(len(log) - 1):
         x1 = (log[i][0]-start_time+timespan)/timespan
         x2 = (log[i+1][0]-start_time+timespan)/timespan
-        y1 = (log[i][1]-low) / (high-low)
-        y2 = (log[i+1][1]-low) / (high-low)
-        sys.stdout.write('<line class="graph" ')
-        sys.stdout.write('x1="{}" y1="{}" x2="{}" y2="{}"/>\n'.format(
-            int(0.5 + left_margin + x1*graph_width),
-            int(0.5 + height - bottom_margin - y1*graph_height),
-            int(0.5 + left_margin + x2*graph_width),
-            int(0.5 + height - bottom_margin - y2*graph_height),
-        ))
+        if key == 'Wind-direction' and abs(log[i][1] - log[i+1][1]) > 180:
+            if log[i][1] < 180:
+                ylist = [
+                    (log[i][1], log[i+1][1] - 360),
+                    (log[i][1] + 360, log[i+1][1])
+                ]
+            else:
+                ylist = [
+                    (log[i][1], log[i+1][1] + 360),
+                    (log[i][1] - 360, log[i+1][1])
+                ]
+        else:
+            ylist = [(log[i][1], log[i+1][1])]
+        for _y1, _y2 in ylist:
+            y1 = (_y1-low) / (high-low)
+            y2 = (_y2-low) / (high-low)
+            sys.stdout.write('<line class="graph" ')
+            sys.stdout.write('x1="{}" y1="{}" x2="{}" y2="{}"/>\n'.format(
+                int(0.5 + left_margin + x1*graph_width),
+                int(0.5 + height - bottom_margin - y1*graph_height),
+                int(0.5 + left_margin + x2*graph_width),
+                int(0.5 + height - bottom_margin - y2*graph_height),
+            ))
     ##
     sys.stdout.write('</svg>\n')
 
