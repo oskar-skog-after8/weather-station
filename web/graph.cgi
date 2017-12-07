@@ -103,6 +103,7 @@ def graph():
         }
         .label
         {
+            text-anchor: middle;
         }
         .graph
         {
@@ -125,6 +126,9 @@ def graph():
         values = map(lambda x: x[1], log)
         low = int(round * math.floor(min(values) / round))
         high = int(round * math.ceil(max(values) / round))
+        if low == high:
+            low -= 1
+            high += 1
         del values
     # Avoid overlapping numbers
     spacing = graph_height / ((high-low)/round)
@@ -154,6 +158,20 @@ def graph():
             height
         ))
     ## Plot graph
+    xlabel = form.getfirst('xlabel', '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+    ylabel = form.getfirst('ylabel', '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+    sys.stdout.write('    <text class="label" x="{0}" y="{1}" transform="rotate(90 {0} {1})" font-size="{2}">{3}</text>\n'.format(
+        0,
+        height/2,
+        label_size,
+        ylabel
+    ))
+    sys.stdout.write('    <text class="label" x="{}" y="{}" font-size="{}">{}</text>\n'.format(
+        width/2,
+        height,
+        label_size,
+        xlabel
+    ))
     for i in range(len(log) - 1):
         x1 = (log[i][0]-start_time+timespan)/timespan
         x2 = (log[i+1][0]-start_time+timespan)/timespan
