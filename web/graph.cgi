@@ -165,20 +165,6 @@ def graph():
             height - (0<i<divisions) * label_size*7/4
         ))
     ## Plot graph
-    xlabel = form.getfirst('xlabel', '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-    ylabel = form.getfirst('ylabel', '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-    sys.stdout.write('    <text class="label" x="{0}" y="{1}" transform="rotate(90 {0} {1})" font-size="{2}">{3}</text>\n'.format(
-        label_size/2,
-        graph_height/2 + top_margin,
-        label_size,
-        ylabel
-    ))
-    sys.stdout.write('    <text class="label" x="{}" y="{}" font-size="{}">{}</text>\n'.format(
-        graph_width/2 + left_margin,
-        height - label_size/2,
-        label_size,
-        xlabel
-    ))
     for i in range(len(log) - 1):
         x1 = (log[i][0]-start_time+timespan)/timespan
         x2 = (log[i+1][0]-start_time+timespan)/timespan
@@ -205,7 +191,21 @@ def graph():
                 int(0.5 + left_margin + x2*graph_width),
                 int(0.5 + height - bottom_margin - y2*graph_height),
             ))
-    ##
+    ## Labels
+    xlabel = form.getfirst('xlabel', '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+    ylabel = form.getfirst('ylabel', '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+    sys.stdout.write('    <text class="label" x="{0}" y="{1}" transform="rotate(90 {0} {1})" font-size="{2}">{3}</text>\n'.format(
+        label_size/2,
+        graph_height/2 + top_margin,
+        label_size,
+        ylabel
+    ))
+    sys.stdout.write('    <text class="label" x="{}" y="{}" font-size="{}">{}</text>\n'.format(
+        graph_width/2 + left_margin,
+        height - label_size/2,
+        label_size,
+        xlabel
+    ))
     sys.stdout.write('</svg>\n')
 
 if __name__ == '__main__':
