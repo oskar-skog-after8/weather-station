@@ -1,10 +1,14 @@
 #!/bin/sh
 
+base=/var/www/html/svg
+domain=lab10.after8.fi
+
 case "$1" in
     hourly)
         hour="$(date '+%H')"
         xlabel="$hour-$(($hour+1)) on $(date '+%Y-%m-%d')"
-        filename="hourly/$(date '+%Y-%m-%d_%H')"
+        filename="hourly/$(date '+%Y-%m/%d/%H')"
+        directories="hourly/$(date '+%Y-%m') hourly/$(date '+%Y-%m/%d')"
         timespan=1h
         avg=1
         divisions=4
@@ -12,7 +16,8 @@ case "$1" in
     ;;
     daily)
         xlabel="$(date '+The+day+of+%Y-%m-%d')"
-        filename="daily/$(date '+%Y-%m-%d')"
+        filename="daily/$(date '+%Y-%m/%d')"
+        directories="daily/$(date '+%Y-%m')"
         timespan=1d
         avg=3
         divisions=24
@@ -21,6 +26,7 @@ case "$1" in
     weekly)
         xlabel="$(date '+Week+%V+of+year+%Y')"
         filename="weekly/$(date '+%Y-%V')"
+        directories=""
         timespan=1w
         avg=15
         divisions=7
@@ -31,6 +37,12 @@ case "$1" in
         exit 1
     ;;
 esac
+
+for directory in $directories; do
+    if ! [ -d $base/$directory ]; then
+        mkdir $base/$directory
+    fi
+done
 
 for parameter in temperature windspeed wind-direction; do
     case $parameter in
@@ -61,9 +73,9 @@ for parameter in temperature windspeed wind-direction; do
             exit 1
         ;;
     esac
-    URL="http://lab10.after8.fi/graph.cgi?number-size=12&label-size=20"
+    URL="http://$domain/graph.cgi?number-size=12&label-size=20"
     for url_parameter in key timespan avg round divisions width height xlabel ylabel; do
         URL="${URL}&${url_parameter}=$(eval echo '$'$url_parameter)"
     done
-    wget -O "/var/www/svg/${filename}.${parameter}.svg" "$URL"
+    wget -O "$base/${filename}.${parameter}.svg" "$URL"
 done
