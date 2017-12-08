@@ -12,7 +12,7 @@ case "$1" in
         timespan=1h
         avg=1
         divisions=4
-        width=540
+        width=480
     ;;
     daily)
         xlabel="$(date '+The+day+of+%Y-%m-%d')"
@@ -59,7 +59,7 @@ for parameter in temperature windspeed wind-direction; do
         windspeed)
             key=w
             round=5
-            height=800
+            height=400
             ylabel="Wind: m/s"
         ;;
         wind-direction)
