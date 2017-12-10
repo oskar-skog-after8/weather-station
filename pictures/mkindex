@@ -11,7 +11,11 @@ cat >index.html <<END
         <title>Weather station, Pictures</title>
     </head>
     <body>
+        <h1>Images of Aftereight's weather station</h1>
         <p><a href="..">Parent directory</a></p>
+        <p>
+            These images are part of documentation for the weather station.
+        </p>
         <p>
 END
 
@@ -22,14 +26,14 @@ cat >sitemap.xml <<END
     xmlns:i="http://www.google.com/schemas/sitemap-image/1.1"
     xmlns:v="http://www.google.com/schemas/sitemap-video/1.1"
 >
-    <url>
-        <loc>http://lab10.after8.fi/stuff/pictures/</loc>
 END
 
 for i in $(seq -w 1 $n); do
-    echo "<a href='$(echo $i.*)'><img src='thumbnails/$i.jpeg' " >>index.html
+    echo "<a href='img.cgi?$(echo $i.*)'><img src='thumbnails/$i.jpeg' " >>index.html
     if [ -e alt/$i ]; then
         echo "alt='$(cat alt/$i)' title='$(cat alt/$i)' " >>index.html
+        echo "<url>" >>sitemap.xml
+        echo "<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?$(echo $i.*)</loc>" >>sitemap.xml
         if [ -n "$(echo $i.* | grep -E 'mp4|ogv')" ]; then
             echo "<v:video>" >>sitemap.xml
             echo "<v:thumbnail_loc>http://lab10.after8.fi/stuff/thumbnail/$i.jpeg</v:thumbnail_loc>" >>sitemap.xml
@@ -45,6 +49,7 @@ for i in $(seq -w 1 $n); do
             #echo "<i:license>???</i:license>" >>sitemap.xml
             echo "</i:image>" >>sitemap.xml
         fi
+        echo "</url>" >>sitemap.xml
     else
         echo "alt='' title='$i' " >>index.html
     fi
@@ -70,4 +75,4 @@ cat >>index.html <<END
 </html>
 END
 
-echo "</url></urlset>" >>sitemap.xml
+echo "</urlset>" >>sitemap.xml
