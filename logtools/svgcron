@@ -52,30 +52,35 @@ for parameter in temperature windspeed wind-direction; do
             height=400
             ylabel="Temperature: %c2%b0C"
             # The temperature graph is full of unnatural jitter.
-            if [ $avg = 1 ]; then
-                avg=3
-            fi
+            min_avg=3
         ;;
         windspeed)
             key=w
             round=5
             height=400
             ylabel="Wind: m/s"
+            min_avg=1
         ;;
         wind-direction)
             key=w-d
             round=45
             height=600
             ylabel="Wind heading: %c2%b0"
+            min_avg=1
         ;;
         *)
             echo "BUG" >/dev/stderr
             exit 1
         ;;
     esac
+    old_avg=$avg
+    if [ $avg -lt $min_avg ]; then
+        avg=$min_avg
+    fi
     URL="http://$domain/graph.cgi?number-size=12&label-size=20"
     for url_parameter in key timespan avg round divisions width height xlabel ylabel; do
         URL="${URL}&${url_parameter}=$(eval echo '$'$url_parameter)"
     done
     wget -O "$base/${filename}.${parameter}.svg" "$URL"
+    avg=$old_avg
 done
