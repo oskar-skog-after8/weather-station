@@ -4,622 +4,989 @@
     xmlns:i="http://www.google.com/schemas/sitemap-image/1.1"
     xmlns:v="http://www.google.com/schemas/sitemap-video/1.1"
 >
-    <url>
-        <loc>http://lab10.after8.fi/stuff/pictures/</loc>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?001.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/001.jpeg</i:loc>
 <i:title>Windspeed stator: original idea was to screw the motor</i:title>
 <i:caption>Windspeed stator: original idea was to screw the motor</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?003.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/003.jpeg</i:loc>
 <i:title>Board in production</i:title>
 <i:caption>Board in production</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?007.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/007.jpeg</i:loc>
 <i:title>Close up on the 555</i:title>
 <i:caption>Close up on the 555</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?008.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/008.jpeg</i:loc>
 <i:title>Finished board bottom</i:title>
 <i:caption>Finished board bottom</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?009.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/009.jpeg</i:loc>
 <i:title>Finished board top</i:title>
 <i:caption>Finished board top</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?010.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/010.jpeg</i:loc>
 <i:title>Finished board angle</i:title>
 <i:caption>Finished board angle</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?011.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/011.jpeg</i:loc>
 <i:title>Finished board side</i:title>
 <i:caption>Finished board side</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?012.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/012.jpeg</i:loc>
 <i:title>Finished board bottom</i:title>
 <i:caption>Finished board bottom</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?013.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/013.jpeg</i:loc>
 <i:title>Finished board side</i:title>
 <i:caption>Finished board side</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?014.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/014.jpeg</i:loc>
 <i:title>Finished board angle</i:title>
 <i:caption>Finished board angle</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?015.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/015.jpeg</i:loc>
 <i:title>Testing the board</i:title>
 <i:caption>Testing the board</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?016.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/016.jpeg</i:loc>
 <i:title>Board connected with (unmodified) PATA cable</i:title>
 <i:caption>Board connected with (unmodified) PATA cable</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?017.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/017.jpeg</i:loc>
 <i:title>Raspberry connected with (unmodified) PATA cable</i:title>
 <i:caption>Raspberry connected with (unmodified) PATA cable</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?018.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/018.jpeg</i:loc>
 <i:title>Wondering why the board did not work</i:title>
 <i:caption>Wondering why the board did not work</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?019.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/019.jpeg</i:loc>
 <i:title>Windspeed meter (too small cups)</i:title>
 <i:caption>Windspeed meter (too small cups)</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?020.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/020.jpeg</i:loc>
 <i:title>Windspeed meter (too small cups)</i:title>
 <i:caption>Windspeed meter (too small cups)</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?021.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/021.jpeg</i:loc>
 <i:title>Windspeed meter (too small cups)</i:title>
 <i:caption>Windspeed meter (too small cups)</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?022.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/022.jpeg</i:loc>
 <i:title>Umodified PATA cables will not work</i:title>
 <i:caption>Umodified PATA cables will not work</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?023.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/023.jpeg</i:loc>
 <i:title>"Modern"PATA cables need to be modified</i:title>
 <i:caption>"Modern"PATA cables need to be modified</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?024.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/024.jpeg</i:loc>
 <i:title>Testing the modified cable</i:title>
 <i:caption>Testing the modified cable</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?025.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/025.jpeg</i:loc>
 <i:title>Testing the modified cable</i:title>
 <i:caption>Testing the modified cable</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?026.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/026.jpeg</i:loc>
 <i:title>Testing probes for modified PATA cables</i:title>
 <i:caption>Testing probes for modified PATA cables</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?027.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/027.jpeg</i:loc>
 <i:title>Testing the modified cable</i:title>
 <i:caption>Testing the modified cable</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?029.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/029.jpeg</i:loc>
 <i:title>Moisture protection attempt</i:title>
 <i:caption>Moisture protection attempt</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?030.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/030.jpeg</i:loc>
 <i:title>Sloppy blueprint</i:title>
 <i:caption>Sloppy blueprint</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?032.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/032.jpeg</i:loc>
 <i:title>Measuring the bearing (motor) for the winddirection meter</i:title>
 <i:caption>Measuring the bearing (motor) for the winddirection meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?033.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/033.jpeg</i:loc>
 <i:title>Measuring the bearing (motor) for the winddirection meter</i:title>
 <i:caption>Measuring the bearing (motor) for the winddirection meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?034.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/034.jpeg</i:loc>
 <i:title>Measuring the bearing (motor) for the winddirection meter</i:title>
 <i:caption>Measuring the bearing (motor) for the winddirection meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?035.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/035.jpeg</i:loc>
 <i:title>Measuring the bearing (motor) for the winddirection meter</i:title>
 <i:caption>Measuring the bearing (motor) for the winddirection meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?036.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/036.jpeg</i:loc>
 <i:title>Bearing/motor for the wind direction meter</i:title>
 <i:caption>Bearing/motor for the wind direction meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?037.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/037.jpeg</i:loc>
 <i:title>Measuring the bearing (motor) for the winddirection meter</i:title>
 <i:caption>Measuring the bearing (motor) for the winddirection meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?038.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/038.jpeg</i:loc>
 <i:title>Measuring the bearing (motor) for the winddirection meter</i:title>
 <i:caption>Measuring the bearing (motor) for the winddirection meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?039.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/039.jpeg</i:loc>
 <i:title>Measuring the bearing (motor) for the winddirection meter</i:title>
 <i:caption>Measuring the bearing (motor) for the winddirection meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?040.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/040.jpeg</i:loc>
 <i:title>Measuring the bearing (motor) for the winddirection meter</i:title>
 <i:caption>Measuring the bearing (motor) for the winddirection meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?041.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/041.jpeg</i:loc>
 <i:title>Measuring the bearing (motor) for the winddirection meter</i:title>
 <i:caption>Measuring the bearing (motor) for the winddirection meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?042.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/042.jpeg</i:loc>
 <i:title>Measuring the bearing (motor) for the winddirection meter</i:title>
 <i:caption>Measuring the bearing (motor) for the winddirection meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?043.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/043.jpeg</i:loc>
 <i:title>Cable to connect the reed switches</i:title>
 <i:caption>Cable to connect the reed switches</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?044.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/044.jpeg</i:loc>
 <i:title>Cable to connect the reed switches</i:title>
 <i:caption>Cable to connect the reed switches</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?045.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/045.jpeg</i:loc>
 <i:title>Wing for the wind direction meter</i:title>
 <i:caption>Wing for the wind direction meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?046.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/046.jpeg</i:loc>
 <i:title>Wing for the wind direction meter</i:title>
 <i:caption>Wing for the wind direction meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?047.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/047.jpeg</i:loc>
 <i:title>Replaced the connector for the thermistor</i:title>
 <i:caption>Replaced the connector for the thermistor</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?048.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/048.jpeg</i:loc>
 <i:title>Temperature math 1/4</i:title>
 <i:caption>Temperature math 1/4</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?049.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/049.jpeg</i:loc>
 <i:title>Temperature math 2/4</i:title>
 <i:caption>Temperature math 2/4</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?050.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/050.jpeg</i:loc>
 <i:title>Temperature math 3/4</i:title>
 <i:caption>Temperature math 3/4</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?051.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/051.jpeg</i:loc>
 <i:title>Temperature math 4/4</i:title>
 <i:caption>Temperature math 4/4</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?052.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/052.jpeg</i:loc>
 <i:title>T(f) graph</i:title>
 <i:caption>T(f) graph</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?053.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/053.jpeg</i:loc>
 <i:title>Replaced the connector for the thermistor again</i:title>
 <i:caption>Replaced the connector for the thermistor again</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?054.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/054.jpeg</i:loc>
 <i:title>Replaced the connector for the thermistor again</i:title>
 <i:caption>Replaced the connector for the thermistor again</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?055.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/055.jpeg</i:loc>
 <i:title>Replaced the connector for the thermistor again</i:title>
 <i:caption>Replaced the connector for the thermistor again</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?056.png</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/056.png</i:loc>
 <i:title>Thermometer (555) output</i:title>
 <i:caption>Thermometer (555) output</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?057.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/057.jpeg</i:loc>
 <i:title>Thermometer is working</i:title>
 <i:caption>Thermometer is working</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?059.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/059.jpeg</i:loc>
 <i:title>Board in operation</i:title>
 <i:caption>Board in operation</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?060.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/060.jpeg</i:loc>
 <i:title>Board in operation</i:title>
 <i:caption>Board in operation</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?061.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/061.jpeg</i:loc>
 <i:title>Glued the magnet in the wing</i:title>
 <i:caption>Glued the magnet in the wing</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?062.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/062.jpeg</i:loc>
 <i:title>Nasty stuff</i:title>
 <i:caption>Nasty stuff</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?063.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/063.jpeg</i:loc>
 <i:title>Gluing the new (7cm dia) cups to the wind speed meter</i:title>
 <i:caption>Gluing the new (7cm dia) cups to the wind speed meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?064.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/064.jpeg</i:loc>
 <i:title>Gluing the new (7cm dia) cups to the wind speed meter</i:title>
 <i:caption>Gluing the new (7cm dia) cups to the wind speed meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?065.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/065.jpeg</i:loc>
 <i:title>Temperature calibration setup 1 (bad)</i:title>
 <i:caption>Temperature calibration setup 1 (bad)</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?066.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/066.jpeg</i:loc>
 <i:title>Temperature calibration setup 1 (bad)</i:title>
 <i:caption>Temperature calibration setup 1 (bad)</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?067.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/067.jpeg</i:loc>
 <i:title>Temperature calibration setup 2 (good)</i:title>
 <i:caption>Temperature calibration setup 2 (good)</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?068.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/068.jpeg</i:loc>
 <i:title>Temperature calibration setup 2 (good)</i:title>
 <i:caption>Temperature calibration setup 2 (good)</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?069.png</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/069.png</i:loc>
 <i:title>The curse: thermometer has loose contact</i:title>
 <i:caption>The curse: thermometer has loose contact</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?070.png</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/070.png</i:loc>
 <i:title>Temperature variation seen on "fake oscilloscope"</i:title>
 <i:caption>Temperature variation seen on "fake oscilloscope"</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?071.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/071.jpeg</i:loc>
 <i:title>Using the bed of the 3D printer for calibrating the thermometer</i:title>
 <i:caption>Using the bed of the 3D printer for calibrating the thermometer</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?072.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/072.jpeg</i:loc>
 <i:title>Close up on the thermistor</i:title>
 <i:caption>Close up on the thermistor</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?073.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/073.jpeg</i:loc>
 <i:title>Windspeed meter finished</i:title>
 <i:caption>Windspeed meter finished</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?074.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/074.jpeg</i:loc>
 <i:title>Windspeed meter finished</i:title>
 <i:caption>Windspeed meter finished</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?075.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/075.jpeg</i:loc>
 <i:title>Wind direction meter: holder for the bearing</i:title>
 <i:caption>Wind direction meter: holder for the bearing</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?076.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/076.jpeg</i:loc>
 <i:title>Wind direction meter: holder for the bearing</i:title>
 <i:caption>Wind direction meter: holder for the bearing</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?077.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/077.jpeg</i:loc>
 <i:title>Wind direction meter: printing the holders for the reed switches</i:title>
 <i:caption>Wind direction meter: printing the holders for the reed switches</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?079.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/079.jpeg</i:loc>
 <i:title>Wind direction meter: Wing attached</i:title>
 <i:caption>Wind direction meter: Wing attached</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?080.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/080.jpeg</i:loc>
 <i:title>Wind direction meter: Reed switches installed in the ring</i:title>
 <i:caption>Wind direction meter: Reed switches installed in the ring</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?081.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/081.jpeg</i:loc>
 <i:title>Wind direction meter: Reed switches installed in the ring</i:title>
 <i:caption>Wind direction meter: Reed switches installed in the ring</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?082.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/082.jpeg</i:loc>
 <i:title>Wind direction meter: Reed switches installed in the ring</i:title>
 <i:caption>Wind direction meter: Reed switches installed in the ring</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?083.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/083.jpeg</i:loc>
 <i:title>Soldering the reed switches</i:title>
 <i:caption>Soldering the reed switches</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?084.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/084.jpeg</i:loc>
 <i:title>Soldering the reed switches</i:title>
 <i:caption>Soldering the reed switches</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?085.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/085.jpeg</i:loc>
 <i:title>Wind direction meter: assembling the ring</i:title>
 <i:caption>Wind direction meter: assembling the ring</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?086.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/086.jpeg</i:loc>
 <i:title>Wind direction meter: assembling the ring</i:title>
 <i:caption>Wind direction meter: assembling the ring</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?087.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/087.jpeg</i:loc>
 <i:title>Wind direction meter: assembling the ring</i:title>
 <i:caption>Wind direction meter: assembling the ring</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?088.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/088.jpeg</i:loc>
 <i:title>Wind direction meter: assembling the ring</i:title>
 <i:caption>Wind direction meter: assembling the ring</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?089.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/089.jpeg</i:loc>
 <i:title>Glued down the the wires to the new contact for the thermistor</i:title>
 <i:caption>Glued down the the wires to the new contact for the thermistor</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?090.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/090.jpeg</i:loc>
 <i:title>Wind direction meter fully assembled</i:title>
 <i:caption>Wind direction meter fully assembled</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?091.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/091.jpeg</i:loc>
 <i:title>Wind direction meter fully assembled</i:title>
 <i:caption>Wind direction meter fully assembled</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?092.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/092.jpeg</i:loc>
 <i:title>Thermometer curse: the reset pin has gotten unsoldered</i:title>
 <i:caption>Thermometer curse: the reset pin has gotten unsoldered</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?093.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/093.jpeg</i:loc>
 <i:title>Thermometer curse: fixed</i:title>
 <i:caption>Thermometer curse: fixed</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?094.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/094.jpeg</i:loc>
 <i:title>Everything connected to the board</i:title>
 <i:caption>Everything connected to the board</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?095.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/095.jpeg</i:loc>
 <i:title>The case</i:title>
 <i:caption>The case</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?096.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/096.jpeg</i:loc>
 <i:title>Attaching the wind direction meter to the case</i:title>
 <i:caption>Attaching the wind direction meter to the case</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?097.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/097.jpeg</i:loc>
 <i:title>Attached the windspeed meter to the case</i:title>
 <i:caption>Attached the windspeed meter to the case</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?099.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/099.jpeg</i:loc>
 <i:title>Glorious 4K UHD view of the board right before being screwed to the case, mod wires have been attached in advance</i:title>
 <i:caption>Glorious 4K UHD view of the board right before being screwed to the case, mod wires have been attached in advance</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?100.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/100.jpeg</i:loc>
 <i:title>Board has been screwed to the case</i:title>
 <i:caption>Board has been screwed to the case</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?101.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/101.jpeg</i:loc>
 <i:title>Raspberry Pi and the board screwed to the case</i:title>
 <i:caption>Raspberry Pi and the board screwed to the case</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?102.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/102.jpeg</i:loc>
 <i:title>Side view of the case</i:title>
 <i:caption>Side view of the case</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?103.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/103.jpeg</i:loc>
 <i:title>Joining the wires in the case</i:title>
 <i:caption>Joining the wires in the case</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?104.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/104.jpeg</i:loc>
 <i:title>Connecting the wind direction meter</i:title>
 <i:caption>Connecting the wind direction meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?105.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/105.jpeg</i:loc>
 <i:title>Inside the case</i:title>
 <i:caption>Inside the case</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?106.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/106.jpeg</i:loc>
 <i:title>Inside the case</i:title>
 <i:caption>Inside the case</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?107.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/107.jpeg</i:loc>
 <i:title>Bottom view 1/4</i:title>
 <i:caption>Bottom view 1/4</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?108.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/108.jpeg</i:loc>
 <i:title>Bottom view 2/4</i:title>
 <i:caption>Bottom view 2/4</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?109.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/109.jpeg</i:loc>
 <i:title>Bottom view 3/4</i:title>
 <i:caption>Bottom view 3/4</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?110.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/110.jpeg</i:loc>
 <i:title>Bottom view 4/4</i:title>
 <i:caption>Bottom view 4/4</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?111.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/111.jpeg</i:loc>
 <i:title>Wing issues: clearance and alignment of the magnet</i:title>
 <i:caption>Wing issues: clearance and alignment of the magnet</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?112.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/112.jpeg</i:loc>
 <i:title>Close up of the weather-proofed thermistor</i:title>
 <i:caption>Close up of the weather-proofed thermistor</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?113.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/113.jpeg</i:loc>
 <i:title>Windspeed meter wiring</i:title>
 <i:caption>Windspeed meter wiring</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?114.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/114.jpeg</i:loc>
 <i:title>Wind direction meter wiring</i:title>
 <i:caption>Wind direction meter wiring</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?115.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/115.jpeg</i:loc>
 <i:title>Weather station</i:title>
 <i:caption>Weather station</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?116.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/116.jpeg</i:loc>
 <i:title>Realigning the magnet on the wing</i:title>
 <i:caption>Realigning the magnet on the wing</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?117.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/117.jpeg</i:loc>
 <i:title>Realigning the magnet on the wing</i:title>
 <i:caption>Realigning the magnet on the wing</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?118.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/118.jpeg</i:loc>
 <i:title>Securely joining the wires inside the case</i:title>
 <i:caption>Securely joining the wires inside the case</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?119.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/119.jpeg</i:loc>
 <i:title>Battery power for calibrating the wind speed meter</i:title>
 <i:caption>Battery power for calibrating the wind speed meter</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?120.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/120.jpeg</i:loc>
 <i:title>Battery power circuitry</i:title>
 <i:caption>Battery power circuitry</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?121.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/121.jpeg</i:loc>
 <i:title>Battery power circuitry</i:title>
 <i:caption>Battery power circuitry</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?122.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/122.jpeg</i:loc>
 <i:title>Battery power circuitry</i:title>
 <i:caption>Battery power circuitry</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?123.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/123.jpeg</i:loc>
 <i:title>Inside the case</i:title>
 <i:caption>Inside the case</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?124.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/124.jpeg</i:loc>
 <i:title>Battery power circuitry</i:title>
 <i:caption>Battery power circuitry</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?125.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/125.jpeg</i:loc>
 <i:title>3R12 batteries taped down</i:title>
 <i:caption>3R12 batteries taped down</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?126.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/126.jpeg</i:loc>
 <i:title>Finished / bottom view</i:title>
 <i:caption>Finished / bottom view</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?127.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/127.jpeg</i:loc>
 <i:title>Finished / top view</i:title>
 <i:caption>Finished / top view</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?128.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/128.jpeg</i:loc>
 <i:title>The challenge of installation: the attic</i:title>
 <i:caption>The challenge of installation: the attic</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?129.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/129.jpeg</i:loc>
 <i:title>The challenge of installation</i:title>
 <i:caption>The challenge of installation</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?130.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/130.jpeg</i:loc>
 <i:title>Weather station finished and installed</i:title>
 <i:caption>Weather station finished and installed</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?131.jpeg</loc>
 <i:image>
 <i:loc>http://lab10.after8.fi/stuff/pictures/131.jpeg</i:loc>
 <i:title>Weather station on the roof</i:title>
 <i:caption>Weather station on the roof</i:caption>
 </i:image>
+</url>
+<url>
+<loc>http://lab10.after8.fi/stuff/pictures/img.cgi?132.mp4</loc>
 <v:video>
 <v:thumbnail_loc>http://lab10.after8.fi/stuff/thumbnail/132.jpeg</v:thumbnail_loc>
 <v:title>[video] Weather station operational</v:title>
 <v:description>[video] Weather station operational</v:description>
 <v:content_loc>http://lab10.after8.fi/stuff/132.mp4</v:content_loc>
 </v:video>
-</url></urlset>
+</url>
+</urlset>
