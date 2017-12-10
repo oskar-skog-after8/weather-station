@@ -24,7 +24,7 @@ cat <<END
         <title>${title}</title>
     </head>
     <body>
-        <h1>Images of Aftereight's weather station</h1>
+        <h1>${title} - <br/>Images of Aftereight's weather station</h1>
         <p><a href=".">Back to image gallery</a></p>
 END
 
