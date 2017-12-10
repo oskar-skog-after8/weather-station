@@ -1,4 +1,4 @@
 59  *   *   *   *   www-data    /usr/local/lib/weather/svgcron hourly
 58  23  *   *   *   www-data    /usr/local/lib/weather/svgcron daily
-56  23  *   *   7   www-data    /usr/local/lib/weather/svgcron weekly
+55  23  *   *   7   www-data    /usr/local/lib/weather/svgcron weekly
 
