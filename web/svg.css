@@ -1,0 +1,16 @@
+img
+{
+    max-width: 100%;
+    height: auto;
+}
+
+.parameter
+{
+    margin-left: 3em;
+}
+
+.next
+{
+    position: absolute;
+    left: 15em;
+}
