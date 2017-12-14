@@ -58,7 +58,7 @@ def main():
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width"/>
-        <!--<meta name="robots" content="noindex, nofollow"/>-->
+        <meta name="robots" content="noindex, nofollow"/>
         <link rel="icon" href="/favicon.png"/>
         <link rel="stylesheet" href="/svg.css"/>
         <title>Weather graphs</title>
