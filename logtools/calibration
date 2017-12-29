@@ -22,7 +22,7 @@
     },
     'Wind-direction': {
         # Direction to north from the 0 degree pole.
-        'north': -80,
+        'north': 80,
     },
 }
 
