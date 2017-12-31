@@ -6,7 +6,7 @@ import time
 
 def pagination(key):
     key_format = '%Y%m%d%H'     # NOTE: Will convert to int for comparisons
-    low_cap = '2017120721'
+    low_cap = '2017122910'
     data = {
         'hourly': {
             'delta': 3600,
