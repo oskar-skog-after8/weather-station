@@ -6,7 +6,7 @@ domain=lab10.after8.fi
 case "$1" in
     hourly)
         hour="$(date '+%_H')"
-        xlabel="$(($hour))-$(($hour+1))+o%27clock+on+$(date '+%Y-%m-%d')"
+        xlabel="$(($hour))+to+$(($hour+1))+o%27clock+on+$(date '+%A+%Y-%m-%d')"
         filename="hourly/$(date '+%Y-%m/%d/%H')"
         directories="hourly/$(date '+%Y-%m') hourly/$(date '+%Y-%m/%d')"
         timespan=1h
@@ -15,7 +15,7 @@ case "$1" in
         width=480
     ;;
     daily)
-        xlabel="$(date '+The+day+of+%Y-%m-%d')"
+        xlabel="$(date '+%Y-%m-%d+%%28%A+of+week+%V%%29')"
         filename="daily/$(date '+%Y-%m/%d')"
         directories="daily/$(date '+%Y-%m')"
         timespan=1d

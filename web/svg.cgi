@@ -120,18 +120,37 @@ def main():
                 timeframe_data[time_key][direction],
             )
         links += '            </p>\n'
-        sys.stdout.write(links)
-        for parameter in parameter_list:
-            sys.stdout.write('            <div class="parameter">\n')
-            sys.stdout.write('                <h3>{}</h3>\n'.format(parameter['h3']))
-            sys.stdout.write('                <img src="{}" width="{}" height="{}"/>\n'.format(
-                '/svg/{}.{}.svg'.format(pagination_data[time_key]['file'], parameter['name']),
-                timeframe_data[time_key]['width'],
-                parameter['height']
-            ))
-            if parameter['remark']:
-                sys.stdout.write('                <p class="remark">{}</p>\n'.format(parameter['remark']))
-            sys.stdout.write('            </div>\n')
+        # Unavailble data check ...
+        assert time_key in ('hourly', 'daily', 'weekly')
+        if time_key == 'hourly':
+            available = True
+        elif time_key == 'daily' and key:
+            available = time.strftime('%Y%m%d') != key[:-2]
+        elif time_key == 'weekly' and key:
+            this_week = time.strftime('%Y%V')
+            selected_week = time.strftime('%Y%V', time.strptime(key, '%Y%m%d%H'))
+            available = selected_week != this_week
+        elif time_key != 'hourly' and not key:
+            available = False
+        # ... notice ...
+        if time_key == 'daily' and not available:
+            sys.stdout.write('            <p>Data from today is not available until tomorrow.</p>\n')
+        elif time_key == 'weekly' and not available:
+            sys.stdout.write('            <p>Data from this week is not available before next Monday.</p>\n')
+        # ... and conditional
+        if available:
+            sys.stdout.write(links)
+            for parameter in parameter_list:
+                sys.stdout.write('            <div class="parameter">\n')
+                sys.stdout.write('                <h3>{}</h3>\n'.format(parameter['h3']))
+                sys.stdout.write('                <img src="{}" width="{}" height="{}"/>\n'.format(
+                    '/svg/{}.{}.svg'.format(pagination_data[time_key]['file'], parameter['name']),
+                    timeframe_data[time_key]['width'],
+                    parameter['height']
+                ))
+                if parameter['remark']:
+                    sys.stdout.write('                <p class="remark">{}</p>\n'.format(parameter['remark']))
+                sys.stdout.write('            </div>\n')
         sys.stdout.write(links)
         sys.stdout.write('        </div>\n')
     
