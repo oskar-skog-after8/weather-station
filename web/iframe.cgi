@@ -20,7 +20,7 @@ def main():
     timestamp = 0
     wind_speed = 0
     wind_direction = 0
-    temperature = 0
+    #temperature = ''
     for line in logfile.read().split('\n')[-10:]:
         parts = filter(None, line.split(' '))[:4]
         if len(parts) < 4:
@@ -39,11 +39,15 @@ def main():
             else:
                 wind_direction = float(parts[3])
         elif parts[2] == 'Temperature':
-            temperature = float(parts[3])
-            if temperature < 0:
-                temperature = int(temperature-.5)
-            else:
-                temperature = int(temperature+.5)
+            try:
+                temperature = float(parts[3])
+                if temperature < 0:
+                    temperature = int(temperature-.5)
+                else:
+                    temperature = int(temperature+.5)
+                temperatyre = str(temperatyre)
+            except ValueError:
+                temperature = '?'
     # Fancy graphics:
     if wind_speed < 10:
         wind_speed = '&#160;{}&#160;'.format(wind_speed)
