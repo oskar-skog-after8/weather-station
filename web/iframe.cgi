@@ -45,7 +45,7 @@ def main():
                     temperature = int(temperature-.5)
                 else:
                     temperature = int(temperature+.5)
-                temperatyre = str(temperatyre)
+                temperature = str(temperature)
             except ValueError:
                 temperature = '?'
     # Fancy graphics:
