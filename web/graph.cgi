@@ -29,7 +29,7 @@ def graph():
     timespan = form.getfirst('timespan')
     timespan_n = float(timespan.rstrip('wdhms'))
     timespan_k = timespan.lstrip('0123456789.')
-    timespan = timespan_n * {'': 1, 's': 1, 'm': 60, 'h': 3600, 'd': 86400, 'w': 640800}[timespan_k]
+    timespan = timespan_n * {'': 1, 's': 1, 'm': 60, 'h': 3600, 'd': 86400, 'w': 604800}[timespan_k]
     days = int(math.ceil(timespan/86400.)) + 1
     log = []
     for i in range(-days, 1):
